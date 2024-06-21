@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb6ysxceggfua"]
+
+[ext_resource type="Script" path="res://Scripts/TowerProjectile.gd" id="1_jg6h6"]
+[ext_resource type="Texture2D" uid="uid://cmstotctfql6q" path="res://icon.svg" id="2_6808d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bs8x6"]
+radius = 14.013
+
+[node name="TowerProjectile" type="CharacterBody2D"]
+position = Vector2(0, -22.33)
+scale = Vector2(0.36, 0.36)
+motion_mode = 1
+script = ExtResource("1_jg6h6")
+metadata/ObjectType = "Projectile"
+metadata/TargetName = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_bs8x6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(0, 1.78814e-07)
+scale = Vector2(0.234375, 0.222656)
+texture = ExtResource("2_6808d")
+
+[node name="Area2D" type="Area2D" parent="."]
+metadata/AreaType = "Hitbox"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bs8x6")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 0.01
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(1, 1)
+shape = SubResource("CircleShape2D_bs8x6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
