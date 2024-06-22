@@ -1,9 +1,11 @@
 extends CharacterBody2D
 
 @onready var Path = self.get_parent().get_parent().get_node("Path")
+@onready var Spawner = self.get_parent().get_parent().get_node("Spawner")
+
 
 var speed = 200  # speed in pixels/sec
-var health = 15
+var health = 10
 var damage = 1
 
 
@@ -25,7 +27,10 @@ func _physics_process(delta):
 		
 	#If we died
 	if health <= 0:
+		Spawner.enemiesInWaveKilled += 1
 		queue_free()
+		
+		
 
 func GetNewPoint():
 	currentPointNum += 1

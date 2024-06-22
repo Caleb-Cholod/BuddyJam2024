@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2i747mpqlqvh"]
+[gd_scene load_steps=8 format=3 uid="uid://c2i747mpqlqvh"]
 
 [ext_resource type="PackedScene" uid="uid://bwhjdq4gqd1ic" path="res://Scenes/Object Scenes/shoot_tower.tscn" id="1_dkemv"]
 [ext_resource type="PackedScene" uid="uid://suxk7o88517c" path="res://Scenes/Object Scenes/basic_enemy.tscn" id="2_u5gnk"]
 [ext_resource type="PackedScene" uid="uid://4ehslf6in540" path="res://Scenes/Object Scenes/path_end.tscn" id="3_a0goq"]
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="4_4ko12"]
+[ext_resource type="PackedScene" uid="uid://c8ntka37jgses" path="res://Scenes/Object Scenes/small_enemy.tscn" id="5_fwa0v"]
 [ext_resource type="Script" path="res://Scenes/Main Scenes/TowerSpawner.gd" id="5_nljlk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvynq"]
@@ -98,11 +99,27 @@ metadata/AreaType = "Path"
 scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
+[node name="WaveText" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 488.0
+offset_top = 237.0
+offset_right = 825.0
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0.878431, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "Wave 1"
+fit_content = true
+tab_size = 7
+
 [node name="HealthText" type="RichTextLabel" parent="."]
-offset_left = 854.0
-offset_top = 559.0
-offset_right = 1152.0
-offset_bottom = 641.0
+offset_left = 868.0
+offset_top = 576.0
+offset_right = 1166.0
+offset_bottom = 658.0
 theme_override_colors/default_color = Color(0, 0.878431, 0, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "Health: 10/10"
@@ -122,13 +139,11 @@ position = Vector2(-21, 481)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="BasicEnemy" parent="Enemies" instance=ExtResource("2_u5gnk")]
-position = Vector2(1459, 84)
-
 [node name="Spawner" type="Node2D" parent="."]
 position = Vector2(1522, 83)
 script = ExtResource("4_4ko12")
 basic_enemy = ExtResource("2_u5gnk")
+small_enemy = ExtResource("5_fwa0v")
 
 [node name="TowerSpawner" type="Node2D" parent="."]
 script = ExtResource("5_nljlk")
