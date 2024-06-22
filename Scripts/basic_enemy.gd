@@ -3,6 +3,10 @@ extends CharacterBody2D
 @onready var Path = self.get_parent().get_parent().get_node("Path")
 
 var speed = 200  # speed in pixels/sec
+var health = 15
+var damage = 1
+
+
 var currentPointNum = 0
 var currentPoint
 var pointExists = false
@@ -18,6 +22,10 @@ func _physics_process(delta):
 		var direction = global_position.direction_to(currentPoint.global_position)
 		velocity = direction * speed
 		move_and_slide()
+		
+	#If we died
+	if health <= 0:
+		queue_free()
 
 func GetNewPoint():
 	currentPointNum += 1

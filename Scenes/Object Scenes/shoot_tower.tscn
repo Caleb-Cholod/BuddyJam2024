@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/shoot_tower.gd" id="1_xci0r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_houeq"]
-radius = 150.0
+radius = 39.6343
 
 [node name="ShootTower" type="Node2D"]
 position = Vector2(652, 251)

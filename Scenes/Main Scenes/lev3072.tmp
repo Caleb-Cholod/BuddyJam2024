@@ -107,6 +107,16 @@ theme_override_colors/default_color = Color(0, 0.878431, 0, 1)
 theme_override_font_sizes/normal_font_size = 40
 text = "Health: 10/10"
 
+[node name="Death Text" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 0.895
+offset_top = 1118.0
+offset_right = 298.895
+offset_bottom = 1200.0
+theme_override_colors/default_color = Color(0, 0.878431, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "You Lose"
+
 [node name="PathEnd" parent="." instance=ExtResource("3_a0goq")]
 position = Vector2(-21, 481)
 

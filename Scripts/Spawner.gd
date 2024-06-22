@@ -3,6 +3,7 @@ extends Node2D
 @export var basic_enemy :PackedScene 
 
 var timer
+var SpawningCD = 2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,13 +14,13 @@ func _ready():
 func _process(delta):
 	timer += delta
 	#var temp = bullet.instantiate()
-	if(timer > 3):
+	if(timer > SpawningCD):
 		print("spawning...")
 		timer = 0
 		var temp = basic_enemy.instantiate()
 		
 		
-		# The randomization at the end is so that way the collisions don't go fucky wucky
-		temp.global_position = global_position#elf.global_position + Vector2(randf_range(-2, 2), randf_range(-2, 2))
+
+		temp.global_position = global_position
 		get_parent().get_node("Enemies").add_child(temp)
 		

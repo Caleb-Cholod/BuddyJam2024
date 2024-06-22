@@ -9,5 +9,8 @@ func AreaEntered(area):
 		var Damage = area.get_parent().get_meta("Damage")
 		area.get_parent().queue_free()
 		Health -= Damage
-		print(Health)
 		HealthText.text = str("Health: ", Health, "/", MaxHealth)
+		
+		if(MaxHealth <= 0):
+			#you died loser
+			pass
