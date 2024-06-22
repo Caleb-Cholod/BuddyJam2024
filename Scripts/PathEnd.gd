@@ -10,3 +10,7 @@ func AreaEntered(area):
 		area.get_parent().queue_free()
 		Health -= Damage
 		HealthText.text = str("Health: ", Health, "/", MaxHealth)
+		
+		if(MaxHealth <= 0):
+			#you died loser
+			pass

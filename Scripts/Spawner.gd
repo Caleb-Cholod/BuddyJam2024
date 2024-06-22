@@ -3,6 +3,7 @@ extends Node2D
 @export var basic_enemy :PackedScene 
 
 var timer
+var SpawningCD = 2
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -13,7 +14,7 @@ func _ready():
 func _process(delta):
 	timer += delta
 	#var temp = bullet.instantiate()
-	if(timer > 3):
+	if(timer > SpawningCD):
 		print("spawning...")
 		timer = 0
 		var temp = basic_enemy.instantiate()

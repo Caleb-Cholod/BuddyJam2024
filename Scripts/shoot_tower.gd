@@ -31,8 +31,6 @@ func RangeEntered(area):
 			EnemiesInRange += 1
 			#Add enemyinarea to end of array
 			enemiesInArea.append(EnteredObject)
-			print("Added Enemy")
-			#print("Targeting enemy: ", enemiesInArea[0])
 			TrackedEnemy = enemiesInArea[0]
 			Tracking = true
 
@@ -43,7 +41,6 @@ func RangeExited(area):
 			lastDeletedEnemy = enemiesInArea[0]
 			EnemiesInRange -= 1
 			enemiesInArea.pop_front()
-			print("area is ", area.get_parent(), " - ", lastDeletedEnemy)
 		
 		if EnemiesInRange == 0:
 			Tracking = false
@@ -52,10 +49,9 @@ func RangeExited(area):
 func EnemyinRangeDied(enemy):
 	
 	#Check if enemy = last enemy killed so that we dont lose an enemy from range, kill it, and then mess up our array
-	print(enemy, " vs ", lastDeletedEnemy)
+	#print(enemy, " vs ", lastDeletedEnemy)
 	TrackedEnemy = null
 	if(enemy != lastDeletedEnemy):
-		
 		#print(enemy, " has died")
 		lastDeletedEnemy = enemy
 		EnemiesInRange -= 1
@@ -67,6 +63,9 @@ func _physics_process(delta):
 	#so it might have to be moved to its own seperate post-shoot() function in the future
 	if TrackedEnemy == null:
 		Tracking = false
+	
+	if(enemiesInArea.size() > 0):
+		TrackedEnemy = enemiesInArea[0]
 	
 	if Tracking == true:
 		TrackedEnemy = enemiesInArea[0]

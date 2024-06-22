@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var Path = self.get_parent().get_parent().get_node("Path")
 
 var speed = 200  # speed in pixels/sec
-var health = 10
+var health = 15
 var damage = 1
 
 
