@@ -3,9 +3,12 @@ extends Node2D
 @export var basic_enemy :PackedScene 
 @export var small_enemy :PackedScene 
 
-@onready var Wavetxt = self.get_parent().get_node("WaveText")
+@onready var Wavetxt = get_parent().get_node("WaveText")
+@onready var limitTxt = get_parent().get_node("TowerLimitText")
+@onready var TSpawner = get_parent().get_node("TowerSpawner")
 
 
+var towerLimit = 1
 
 var enemy
 
@@ -76,10 +79,20 @@ func _process(delta):
 		#if(waveNumber != 0):
 		Wavetxt.text = "Wave " + str(waveNumber+2)
 		
+		
+		
 		timer5 -= delta
-		if(timer5 <= 0):
+		if(timer5 < 0):
+			#add stats
+			
 			#reset wave
 			waveNumber += 1
+			if(waveNumber == 2):
+				towerLimit += 1
+				print("updating")
+				limitTxt.text = "Towers " + str(TSpawner.numberCurrentTowers) + "/" +str(towerLimit)
+				TSpawner.towerLimit = towerLimit
+				
 			enemiesInWave += 1
 			enemiesSpawned = 0
 			enemiesInWaveKilled = 0
