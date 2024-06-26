@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var TowerRange = self.get_meta("Range")
+#@onready var TowerRange = self.get_meta("Range")
 @onready var RangeArea2D = self.get_node("Area2D")
 @onready var RangeCS2D = RangeArea2D.get_node("CollisionShape2D")
 @onready var Sprite = self.get_node("Sprite2D")
@@ -16,13 +16,17 @@ var lastDeletedEnemy
 var CD = 0.3
 var timer = 0
 var damage = 2
+var range = 150
 
 var enemiesInArea = []
 
 func _ready():
-	RangeCS2D.shape.radius = TowerRange
+	RangeCS2D.shape.radius = range
 
 func RangeEntered(area):
+	#just update our range here
+	RangeCS2D.shape.radius = range
+	
 	#Currently, tower only shoots most recent enemy that entered area, we want it to always shoot furthest
 	if area.get_meta("AreaType") == "Hitbox":
 		var EnteredObject = area.get_parent()
@@ -78,6 +82,7 @@ func _physics_process(delta):
 			Shoot()
 
 func Shoot():
+	
 	var instance = projectile.instantiate()
 	instance.position = position
 	instance.projDmg = damage
@@ -87,4 +92,6 @@ func Shoot():
 	#Needed for when we have multiple towers
 	instance.firedFromTowerNum = 0
 	self.get_parent().get_parent().add_child(instance)
+	
+	
 

@@ -6,6 +6,7 @@ extends Node2D
 @onready var Wavetxt = get_parent().get_node("WaveText")
 @onready var limitTxt = get_parent().get_node("TowerLimitText")
 @onready var TSpawner = get_parent().get_node("TowerSpawner")
+@onready var Trader = get_parent().get_node("Trader")
 
 
 var towerLimit = 1
@@ -93,12 +94,24 @@ func _process(delta):
 				limitTxt.text = "Towers " + str(TSpawner.numberCurrentTowers) + "/" +str(towerLimit)
 				TSpawner.towerLimit = towerLimit
 				
+			
+			#Update stats
+			Trader.tw1[0] += 10
+			Trader.tw2[1] -= 0.1
+			Trader.tw1[2] += 50
+			
+			TSpawner.updateTower(0, Trader.tw1)
+			TSpawner.updateTower(1, Trader.tw2)
+			TSpawner.updateTower(0, Trader.tw1)
+			
 			enemiesInWave += 1
 			enemiesSpawned = 0
 			enemiesInWaveKilled = 0
 			timer5 = 5
 			#
 			Wavetxt.visible = false
+			
+
 		
 		#here we would initiate a trade and wait rather than do a timer--
 		
