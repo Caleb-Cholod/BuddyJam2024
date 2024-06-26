@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2i747mpqlqvh"]
+[gd_scene load_steps=16 format=3 uid="uid://c2i747mpqlqvh"]
 
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_08nbr"]
 [ext_resource type="PackedScene" uid="uid://bwhjdq4gqd1ic" path="res://Scenes/Object Scenes/shoot_tower.tscn" id="1_dkemv"]
 [ext_resource type="Texture2D" uid="uid://bdnqe33rrwp60" path="res://ui/game/game_pause_button.png" id="1_vobs2"]
 [ext_resource type="PackedScene" uid="uid://suxk7o88517c" path="res://Scenes/Object Scenes/basic_enemy.tscn" id="2_u5gnk"]
@@ -17,6 +18,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvynq"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_08nbr")
 
 [node name="UI" type="Node2D" parent="."]
 
