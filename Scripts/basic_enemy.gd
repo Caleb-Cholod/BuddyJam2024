@@ -14,6 +14,7 @@ var currentPoint
 var pointExists = false
 
 func _ready():
+	
 	#Set to group enemies
 	add_to_group("enemies")
 	#Find next point
