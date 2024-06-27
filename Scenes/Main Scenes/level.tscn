@@ -1,25 +1,67 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2i747mpqlqvh"]
+[gd_scene load_steps=28 format=3 uid="uid://c2i747mpqlqvh"]
 
-[ext_resource type="PackedScene" uid="uid://bwhjdq4gqd1ic" path="res://Scenes/Object Scenes/shoot_tower.tscn" id="1_dkemv"]
-[ext_resource type="PackedScene" uid="uid://suxk7o88517c" path="res://Scenes/Object Scenes/basic_enemy.tscn" id="2_u5gnk"]
-[ext_resource type="PackedScene" uid="uid://4ehslf6in540" path="res://Scenes/Object Scenes/path_end.tscn" id="3_a0goq"]
-[ext_resource type="Script" path="res://Scripts/Spawner.gd" id="4_4ko12"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_08nbr"]
+[ext_resource type="PackedScene" uid="uid://bwhjdq4gqd1ic" path="res://Scenes/Objects/shoot_tower.tscn" id="1_dkemv"]
+[ext_resource type="Texture2D" uid="uid://bdnqe33rrwp60" path="res://ui/game/game_pause_button.png" id="1_vobs2"]
+[ext_resource type="FontFile" uid="uid://2y0k2lv7ygk4" path="res://Fonts/PeaberryBase.ttf" id="3_3qub6"]
+[ext_resource type="PackedScene" uid="uid://4ehslf6in540" path="res://Scenes/Objects/path_end.tscn" id="3_a0goq"]
+[ext_resource type="Script" path="res://Scripts/Pause_Button.gd" id="3_wvkf4"]
+[ext_resource type="Script" path="res://Scripts/Play_Button.gd" id="4_v0jy1"]
 [ext_resource type="Script" path="res://Scenes/Main Scenes/TowerSpawner.gd" id="5_nljlk"]
+[ext_resource type="PackedScene" uid="uid://dmy44fo0ckx0f" path="res://Scenes/Objects/red_tower.tscn" id="7_pgpl0"]
+[ext_resource type="Texture2D" uid="uid://cxphwsxlwta1v" path="res://ui/game/game_start_wave_button.png" id="9_v6j75"]
+[ext_resource type="Script" path="res://Scripts/Trader.gd" id="13_s5b52"]
+[ext_resource type="Texture2D" uid="uid://bg14s41iiecgg" path="res://Sprites/Slime/Slime.png" id="15_281cn"]
+[ext_resource type="Texture2D" uid="uid://bfxuud0bm8wl" path="res://Sprites/Background.bmp" id="16_esrty"]
+[ext_resource type="Texture2D" uid="uid://sd06c1tlta00" path="res://ui/inventory/inventory.png" id="17_p1aj1"]
+[ext_resource type="Script" path="res://Scripts/DraggableIcon.gd" id="17_pvcc6"]
+[ext_resource type="Texture2D" uid="uid://q2ldlj8m3ci5" path="res://Scenes/Main Scenes/ui/inventory/inventory_card.png" id="18_ugqa6"]
+[ext_resource type="Script" path="res://Scripts/DroppableZone.gd" id="18_w7d4m"]
+[ext_resource type="Texture2D" uid="uid://bja1b15hdhhi8" path="res://Scenes/Main Scenes/ui/trade/trade.png" id="19_0mvtq"]
+[ext_resource type="Texture2D" uid="uid://bw83247oei6qv" path="res://Scenes/Main Scenes/ui/inventory/inventory_slot.png" id="19_5okqw"]
+[ext_resource type="Texture2D" uid="uid://bcqfc4rjc4273" path="res://Scenes/Main Scenes/ui/trade/trade_card_small.png" id="20_mwoxy"]
+[ext_resource type="Texture2D" uid="uid://b2be2fup1vobq" path="res://Scenes/Main Scenes/ui/trade/trade_card_stats.png" id="21_31jxn"]
+[ext_resource type="Texture2D" uid="uid://dmu5tdj1g4bph" path="res://Scenes/Main Scenes/ui/icons/icon_stats_damage.png" id="21_g4sga"]
+[ext_resource type="Texture2D" uid="uid://bnuakq8w0d8rv" path="res://Scenes/Main Scenes/ui/trade/trade_arrow1.png" id="22_ca7fn"]
+[ext_resource type="Texture2D" uid="uid://bercv61x6b1yf" path="res://Scenes/Main Scenes/ui/trade/trade_slot.png" id="23_8tocr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvynq"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0n6uu"]
+radius = 23.2594
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_exr10"]
+radius = 41.9738
+
 [node name="Level" type="Node2D"]
 
-[node name="Towers" type="Node2D" parent="."]
+[node name="UI" type="Node2D" parent="."]
 
-[node name="ShootTower" parent="Towers" instance=ExtResource("1_dkemv")]
-position = Vector2(551, 145.31)
-metadata/Range = 250
+[node name="Button" type="Button" parent="UI"]
+process_mode = 3
+offset_left = 994.0
+offset_top = 6.0
+offset_right = 1064.0
+offset_bottom = 76.0
+icon = ExtResource("1_vobs2")
+flat = true
+script = ExtResource("3_wvkf4")
+
+[node name="Button2" type="Button" parent="UI"]
+offset_left = 1068.0
+offset_top = 6.0
+offset_right = 1138.0
+offset_bottom = 76.0
+icon = ExtResource("9_v6j75")
+flat = true
+script = ExtResource("4_v0jy1")
+
+[node name="Towers" type="Node2D" parent="."]
 
 [node name="Path" type="Node2D" parent="."]
 
 [node name="PathPoint1" type="Node2D" parent="Path"]
-position = Vector2(1152, 87)
+position = Vector2(1151, 335)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint1"]
 metadata/AreaType = "Path"
@@ -29,7 +71,7 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint2" type="Node2D" parent="Path"]
-position = Vector2(900, 87)
+position = Vector2(961, 359)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint2"]
 metadata/AreaType = "Path"
@@ -39,7 +81,7 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint3" type="Node2D" parent="Path"]
-position = Vector2(900, 272)
+position = Vector2(885, 558)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint3"]
 metadata/AreaType = "Path"
@@ -49,7 +91,7 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint4" type="Node2D" parent="Path"]
-position = Vector2(315, 272)
+position = Vector2(630, 478)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint4"]
 metadata/AreaType = "Path"
@@ -59,7 +101,7 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint5" type="Node2D" parent="Path"]
-position = Vector2(315, 154)
+position = Vector2(104, 479)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint5"]
 metadata/AreaType = "Path"
@@ -69,7 +111,7 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint6" type="Node2D" parent="Path"]
-position = Vector2(184, 154)
+position = Vector2(325, 312)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint6"]
 metadata/AreaType = "Path"
@@ -79,7 +121,7 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint7" type="Node2D" parent="Path"]
-position = Vector2(184, 480)
+position = Vector2(227, 579)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint7"]
 metadata/AreaType = "Path"
@@ -89,7 +131,7 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint8" type="Node2D" parent="Path"]
-position = Vector2(-133, 480)
+position = Vector2(-109, 286)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint8"]
 metadata/AreaType = "Path"
@@ -98,17 +140,51 @@ metadata/AreaType = "Path"
 scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
-[node name="HealthText" type="RichTextLabel" parent="."]
-offset_left = 854.0
-offset_top = 559.0
-offset_right = 1152.0
-offset_bottom = 641.0
-theme_override_colors/default_color = Color(0, 0.878431, 0, 1)
+[node name="TowerLimitText" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 773.0
+offset_top = 22.0
+offset_right = 946.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3qub6")
+theme_override_font_sizes/normal_font_size = 24
+text = "Towers 1/1"
+fit_content = true
+tab_size = 7
+
+[node name="WaveText" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 502.0
+offset_top = 257.0
+offset_right = 839.0
+offset_bottom = 347.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3qub6")
 theme_override_font_sizes/normal_font_size = 40
-text = "Health: 10/10"
+text = "Wave 1"
+fit_content = true
+tab_size = 7
+
+[node name="HealthText" type="RichTextLabel" parent="."]
+offset_left = 868.0
+offset_top = 576.0
+offset_right = 1166.0
+offset_bottom = 658.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3qub6")
+theme_override_font_sizes/normal_font_size = 40
+text = "Health 10/10"
 
 [node name="Death Text" type="RichTextLabel" parent="."]
-visible = false
 offset_left = 0.895
 offset_top = 1118.0
 offset_right = 298.895
@@ -118,18 +194,236 @@ theme_override_font_sizes/normal_font_size = 40
 text = "You Lose"
 
 [node name="PathEnd" parent="." instance=ExtResource("3_a0goq")]
-position = Vector2(-21, 481)
+position = Vector2(3, 287)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="BasicEnemy" parent="Enemies" instance=ExtResource("2_u5gnk")]
-position = Vector2(1459, 84)
-
 [node name="Spawner" type="Node2D" parent="."]
-position = Vector2(1522, 83)
-script = ExtResource("4_4ko12")
-basic_enemy = ExtResource("2_u5gnk")
+position = Vector2(1506, 331)
 
 [node name="TowerSpawner" type="Node2D" parent="."]
 script = ExtResource("5_nljlk")
 basic_tower = ExtResource("1_dkemv")
+red_tower = ExtResource("7_pgpl0")
+
+[node name="Trader" type="Node2D" parent="."]
+script = ExtResource("13_s5b52")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(576.5, 323.5)
+scale = Vector2(0.599479, 0.599074)
+texture = ExtResource("16_esrty")
+
+[node name="Main" type="Node2D" parent="."]
+script = ExtResource("1_08nbr")
+
+[node name="TowerSpots" type="Node2D" parent="."]
+
+[node name="TowerSpot1" type="Area2D" parent="TowerSpots"]
+position = Vector2(751, 444)
+script = ExtResource("18_w7d4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerSpots/TowerSpot1"]
+position = Vector2(1, 37)
+shape = SubResource("CircleShape2D_0n6uu")
+
+[node name="TowerSpot2" type="Area2D" parent="TowerSpots"]
+position = Vector2(541, 532)
+script = ExtResource("18_w7d4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerSpots/TowerSpot2"]
+position = Vector2(1, -3)
+shape = SubResource("CircleShape2D_0n6uu")
+
+[node name="TowerSpot3" type="Area2D" parent="TowerSpots"]
+position = Vector2(344, 490)
+script = ExtResource("18_w7d4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerSpots/TowerSpot3"]
+position = Vector2(-2, 32)
+shape = SubResource("CircleShape2D_0n6uu")
+
+[node name="TowerSpot4" type="Area2D" parent="TowerSpots"]
+position = Vector2(168.345, 602.321)
+script = ExtResource("18_w7d4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerSpots/TowerSpot4"]
+position = Vector2(7.65527, 5.67944)
+shape = SubResource("CircleShape2D_0n6uu")
+
+[node name="TowerSpot5" type="Area2D" parent="TowerSpots"]
+position = Vector2(58.7316, 471.289)
+script = ExtResource("18_w7d4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerSpots/TowerSpot5"]
+position = Vector2(3.26837, 8.71121)
+shape = SubResource("CircleShape2D_0n6uu")
+
+[node name="TowerSpot6" type="Area2D" parent="TowerSpots"]
+position = Vector2(260.319, 424.672)
+script = ExtResource("18_w7d4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerSpots/TowerSpot6"]
+position = Vector2(-0.31897, -1.67166)
+shape = SubResource("CircleShape2D_0n6uu")
+
+[node name="TowerSpot7" type="Area2D" parent="TowerSpots"]
+position = Vector2(240.16, 322.618)
+script = ExtResource("18_w7d4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerSpots/TowerSpot7"]
+position = Vector2(-2.16022, 4.38193)
+shape = SubResource("CircleShape2D_0n6uu")
+
+[node name="InventoryContainer" type="Node2D" parent="."]
+
+[node name="Container" type="Sprite2D" parent="InventoryContainer"]
+position = Vector2(585, 355)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("17_p1aj1")
+
+[node name="Card" type="Sprite2D" parent="InventoryContainer/Container"]
+position = Vector2(0, 18.3333)
+texture = ExtResource("18_ugqa6")
+
+[node name="Slot1" type="Sprite2D" parent="InventoryContainer/Container/Card"]
+position = Vector2(-290, -16.9047)
+scale = Vector2(2, 2)
+texture = ExtResource("19_5okqw")
+
+[node name="TowerIcon" type="Sprite2D" parent="InventoryContainer/Container/Card/Slot1"]
+position = Vector2(-0.714279, -2.85715)
+scale = Vector2(0.018, 0.018)
+texture = ExtResource("15_281cn")
+
+[node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot1"]
+position = Vector2(133.929, 8.18454)
+
+[node name="HitArea" type="Area2D" parent="InventoryContainer/Container/Card/Slot1/TowerIconNode"]
+position = Vector2(-131.072, -6.04167)
+script = ExtResource("17_pvcc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InventoryContainer/Container/Card/Slot1/TowerIconNode/HitArea"]
+position = Vector2(-2.14287, -1.42857)
+shape = SubResource("CircleShape2D_exr10")
+
+[node name="Slot2" type="Sprite2D" parent="InventoryContainer/Container/Card"]
+position = Vector2(-74.2857, -16.9047)
+scale = Vector2(2, 2)
+texture = ExtResource("19_5okqw")
+
+[node name="TowerIcon" type="Sprite2D" parent="InventoryContainer/Container/Card/Slot2"]
+position = Vector2(-0.714279, -2.85715)
+scale = Vector2(0.018, 0.018)
+texture = ExtResource("15_281cn")
+
+[node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot2"]
+position = Vector2(133.929, 8.18454)
+
+[node name="HitArea" type="Area2D" parent="InventoryContainer/Container/Card/Slot2/TowerIconNode"]
+position = Vector2(-131.072, -8.18453)
+script = ExtResource("17_pvcc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InventoryContainer/Container/Card/Slot2/TowerIconNode/HitArea"]
+position = Vector2(-2.85715, -1.42857)
+shape = SubResource("CircleShape2D_exr10")
+
+[node name="Slot3" type="Sprite2D" parent="InventoryContainer/Container/Card"]
+position = Vector2(145.714, -18.3333)
+scale = Vector2(2, 2)
+texture = ExtResource("19_5okqw")
+
+[node name="TowerIcon" type="Sprite2D" parent="InventoryContainer/Container/Card/Slot3"]
+position = Vector2(-0.714279, -2.85715)
+scale = Vector2(0.018, 0.018)
+texture = ExtResource("15_281cn")
+
+[node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot3"]
+position = Vector2(0.556198, -0.198941)
+
+[node name="HitArea" type="Area2D" parent="InventoryContainer/Container/Card/Slot3/TowerIconNode"]
+position = Vector2(2.14281, 5.71426)
+script = ExtResource("17_pvcc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InventoryContainer/Container/Card/Slot3/TowerIconNode/HitArea"]
+position = Vector2(-3.57144, -3.57143)
+shape = SubResource("CircleShape2D_exr10")
+
+[node name="Slot4" type="Sprite2D" parent="InventoryContainer/Container/Card"]
+position = Vector2(351.429, -19.7618)
+scale = Vector2(2, 2)
+texture = ExtResource("19_5okqw")
+
+[node name="TowerIcon" type="Sprite2D" parent="InventoryContainer/Container/Card/Slot4"]
+position = Vector2(-0.714279, -2.85715)
+scale = Vector2(0.018, 0.018)
+texture = ExtResource("15_281cn")
+
+[node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot4"]
+position = Vector2(1.53764, 3.81451)
+
+[node name="HitArea" type="Area2D" parent="InventoryContainer/Container/Card/Slot4/TowerIconNode"]
+position = Vector2(2.14285, 2.85712)
+script = ExtResource("17_pvcc6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InventoryContainer/Container/Card/Slot4/TowerIconNode/HitArea"]
+position = Vector2(-4.28572, -6.42853)
+shape = SubResource("CircleShape2D_exr10")
+
+[node name="TradeContainer" type="Node2D" parent="."]
+
+[node name="Container" type="Sprite2D" parent="TradeContainer"]
+position = Vector2(580, 344)
+texture = ExtResource("19_0mvtq")
+
+[node name="TradeOption1" type="Node2D" parent="TradeContainer"]
+
+[node name="TradeCard" type="Sprite2D" parent="TradeContainer/TradeOption1"]
+position = Vector2(284, 368)
+texture = ExtResource("20_mwoxy")
+
+[node name="IconStatsDamage" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(-90, -21)
+scale = Vector2(1.27551, 1.27551)
+texture = ExtResource("21_g4sga")
+
+[node name="TradeCardStats" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(38, -21)
+texture = ExtResource("21_31jxn")
+
+[node name="TradeArrow1" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(-2, -123)
+texture = ExtResource("22_ca7fn")
+
+[node name="Sprite2D" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+
+[node name="TradeSlot" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(-77, -125)
+texture = ExtResource("23_8tocr")
+
+[node name="TradeSlot2" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(69, -123)
+texture = ExtResource("23_8tocr")
+
+[node name="TradeOption2" type="Node2D" parent="TradeContainer"]
+position = Vector2(594, 392)
+
+[node name="Sprite2D" type="Sprite2D" parent="TradeContainer/TradeOption2"]
+position = Vector2(0, -23)
+texture = ExtResource("20_mwoxy")
+
+[node name="TradeOption3" type="Node2D" parent="TradeContainer"]
+position = Vector2(902, 392)
+
+[node name="Sprite2D" type="Sprite2D" parent="TradeContainer/TradeOption3"]
+position = Vector2(0, -23)
+texture = ExtResource("20_mwoxy")
+
+[connection signal="pressed" from="UI/Button" to="UI/Button" method="_on_pressed"]
+[connection signal="button_down" from="UI/Button2" to="UI/Button2" method="_on_button_down"]
+[connection signal="pressed" from="UI/Button2" to="UI/Button" method="_on_button_2_pressed"]
+[connection signal="pressed" from="UI/Button2" to="UI/Button2" method="_on_pressed"]

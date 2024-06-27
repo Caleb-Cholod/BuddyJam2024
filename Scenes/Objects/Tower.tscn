@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://i7g1xobv1oxw"]
+
+[ext_resource type="Script" path="res://Scripts/shoot_tower.gd" id="1_gh2u3"]
+[ext_resource type="Texture2D" uid="uid://22rd5xdih4f3" path="res://Sprites/Towers/Tree_Stump_Slime.png" id="2_a7ffx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_houeq"]
+radius = 39.6343
+
+[node name="ShootTower" type="Node2D"]
+position = Vector2(652, 251)
+scale = Vector2(0.444575, 0.444575)
+script = ExtResource("1_gh2u3")
+metadata/Range = 150
+metadata/ObjectType = "Tower"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_a7ffx")
+
+[node name="ShootPoint" type="Node2D" parent="Sprite2D"]
+position = Vector2(-0.000301276, -83.2256)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+metadata/AreaType = "Range"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2.24902, 2.23928)
+shape = SubResource("CircleShape2D_houeq")
+
+[connection signal="area_entered" from="Area2D" to="." method="RangeEntered"]
+[connection signal="area_exited" from="Area2D" to="." method="RangeExited"]

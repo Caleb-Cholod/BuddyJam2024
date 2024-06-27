@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 @onready var Path = self.get_parent().get_parent().get_node("Path")
 
+
 var speed = 200  # speed in pixels/sec
-var health = 15
+var health = 10
 var damage = 1
 
 
@@ -12,6 +13,7 @@ var currentPoint
 var pointExists = false
 
 func _ready():
+	
 	#Set to group enemies
 	add_to_group("enemies")
 	#Find next point
@@ -25,7 +27,10 @@ func _physics_process(delta):
 		
 	#If we died
 	if health <= 0:
+		GameState.enemiesInWaveKilled += 1
 		queue_free()
+		
+		
 
 func GetNewPoint():
 	currentPointNum += 1

@@ -21,11 +21,10 @@ func _physics_process(delta):
 		#just do my own collision cuz it works better :/
 		var distVect = abs(Target.global_position - global_position)
 		if(distVect.x < 50 && distVect.y < 50):
-			print("i hit it")
 			if Target.is_in_group("enemies"):
 				Target.health -= projDmg
 				if(Target.health <= 0):
-					get_parent().get_node("Towers").get_child(firedFromTowerNum).EnemyinRangeDied(Target)
+					get_parent().get_node("Main").get_child(firedFromTowerNum).EnemyinRangeDied(Target)
 				queue_free()
 	#if target is null, just destroy bullet rather than leaving it
 	else:

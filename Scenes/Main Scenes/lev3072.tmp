@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c2i747mpqlqvh"]
 
-[ext_resource type="PackedScene" uid="uid://bwhjdq4gqd1ic" path="res://Scenes/Object Scenes/shoot_tower.tscn" id="1_dkemv"]
-[ext_resource type="PackedScene" uid="uid://suxk7o88517c" path="res://Scenes/Object Scenes/basic_enemy.tscn" id="2_u5gnk"]
-[ext_resource type="PackedScene" uid="uid://4ehslf6in540" path="res://Scenes/Object Scenes/path_end.tscn" id="3_a0goq"]
+[ext_resource type="PackedScene" uid="uid://bwhjdq4gqd1ic" path="res://Scenes/Objects/shoot_tower.tscn" id="1_dkemv"]
+[ext_resource type="PackedScene" uid="uid://suxk7o88517c" path="res://Scenes/Objects/basic_enemy.tscn" id="2_u5gnk"]
+[ext_resource type="PackedScene" uid="uid://4ehslf6in540" path="res://Scenes/Objects/path_end.tscn" id="3_a0goq"]
 [ext_resource type="Script" path="res://Scripts/Spawner.gd" id="4_4ko12"]
 [ext_resource type="Script" path="res://Scenes/Main Scenes/TowerSpawner.gd" id="5_nljlk"]
 
