@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://4ehslf6in540"]
+
+[ext_resource type="Script" path="res://Scripts/PathEnd.gd" id="1_tcadw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vs7ey"]
+
+[node name="PathEnd" type="Node2D"]
+script = ExtResource("1_tcadw")
+metadata/ObjectType = "End"
+
+[node name="EndArea2D" type="Area2D" parent="."]
+metadata/AreaType = "End"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea2D"]
+shape = SubResource("CircleShape2D_vs7ey")
+
+[connection signal="area_entered" from="EndArea2D" to="." method="AreaEntered"]

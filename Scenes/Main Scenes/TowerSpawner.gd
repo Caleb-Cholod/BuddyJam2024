@@ -3,7 +3,6 @@ extends Node2D
 @export var basic_tower :PackedScene 
 @export var red_tower :PackedScene 
 
-@onready var spawner = get_parent().get_node("Spawner")
 @onready var TowerLimitTxt = self.get_parent().get_node("TowerLimitText")
 
 var mousecooldown

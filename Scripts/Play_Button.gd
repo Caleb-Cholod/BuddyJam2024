@@ -13,10 +13,4 @@ func _process(delta):
 
 
 func _on_pressed():
-	print("YO")
-	get_tree().paused = false
-
-
-func _on_button_down():
-	print("O")
-	get_tree().paused = false
+	GameState.currentWaveState = GameState.WaveState.IN_PROGRESS

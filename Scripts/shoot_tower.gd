@@ -1,12 +1,16 @@
 extends Node2D
 
+var mushroomTexture: Texture2D = preload("res://Sprites/Towers/Tree_Stump_Shroom.png")
+var slimeTexture: Texture2D = preload("res://Sprites/Towers/Tree_Stump_Slime.png")
+var bunnyTexture: Texture2D = preload("res://Sprites/Towers/Tree_Stump_Bunny.png")
+var phoenixTexture: Texture2D = preload("res://Sprites/Towers/Tree_Stump_Phoenix.png")
 
 #@onready var TowerRange = self.get_meta("Range")
 @onready var RangeArea2D = self.get_node("Area2D")
 @onready var RangeCS2D = RangeArea2D.get_node("CollisionShape2D")
 @onready var Sprite = self.get_node("Sprite2D")
 @onready var ShootPoint = Sprite.get_node("ShootPoint")
-@onready var projectile = load("res://Scenes/Object Scenes/tower_projectile.tscn")
+@onready var projectile = load("res://Scenes/Objects/tower_projectile.tscn")
 
 var TrackedEnemy
 var Tracking = false
@@ -17,11 +21,22 @@ var CD = 0.3
 var timer = 0
 var damage = 2
 var range = 150
+var isEnabled = false
+var type: Enums.TowerType
 
 var enemiesInArea = []
 
 func _ready():
 	RangeCS2D.shape.radius = range
+	match type:
+		Enums.TowerType.BUNNY:
+			Sprite.texture = bunnyTexture
+		Enums.TowerType.SLIME:
+			Sprite.texture = slimeTexture
+		Enums.TowerType.MUSHROOM:
+			Sprite.texture = mushroomTexture
+		Enums.TowerType.PHOENIX:
+			Sprite.texture = phoenixTexture
 
 func RangeEntered(area):
 	#just update our range here
@@ -73,7 +88,7 @@ func _physics_process(delta):
 	
 	if Tracking == true:
 		TrackedEnemy = enemiesInArea[0]
-		self.look_at(TrackedEnemy.global_position)
+		self.get_child(0).set_flip_h(self.global_position.x < abs(TrackedEnemy.global_position.x))
 		
 		#shooting cooldown	
 		timer += delta
