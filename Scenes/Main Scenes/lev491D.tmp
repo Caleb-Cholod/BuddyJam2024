@@ -1,0 +1,208 @@
+[gd_scene load_steps=16 format=3 uid="uid://c2i747mpqlqvh"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_08nbr"]
+[ext_resource type="PackedScene" uid="uid://bwhjdq4gqd1ic" path="res://Scenes/Objects/shoot_tower.tscn" id="1_dkemv"]
+[ext_resource type="Texture2D" uid="uid://bdnqe33rrwp60" path="res://ui/game/game_pause_button.png" id="1_vobs2"]
+[ext_resource type="PackedScene" uid="uid://suxk7o88517c" path="res://Scenes/Objects/basic_enemy.tscn" id="2_u5gnk"]
+[ext_resource type="FontFile" uid="uid://2y0k2lv7ygk4" path="res://Fonts/PeaberryBase.ttf" id="3_3qub6"]
+[ext_resource type="PackedScene" uid="uid://4ehslf6in540" path="res://Scenes/Objects/path_end.tscn" id="3_a0goq"]
+[ext_resource type="Script" path="res://Scripts/Pause_Button.gd" id="3_wvkf4"]
+[ext_resource type="Script" path="res://Scripts/Spawner.gd" id="4_4ko12"]
+[ext_resource type="Script" path="res://Scripts/Play_Button.gd" id="4_v0jy1"]
+[ext_resource type="PackedScene" uid="uid://c8ntka37jgses" path="res://Scenes/Objects/small_enemy.tscn" id="5_fwa0v"]
+[ext_resource type="Script" path="res://Scenes/Main Scenes/TowerSpawner.gd" id="5_nljlk"]
+[ext_resource type="PackedScene" uid="uid://dmy44fo0ckx0f" path="res://Scenes/Objects/red_tower.tscn" id="7_pgpl0"]
+[ext_resource type="Texture2D" uid="uid://cxphwsxlwta1v" path="res://ui/game/game_start_wave_button.png" id="9_v6j75"]
+[ext_resource type="Script" path="res://Scripts/Trader.gd" id="13_s5b52"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvynq"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_08nbr")
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="UI"]
+process_mode = 3
+offset_left = 994.0
+offset_top = 6.0
+offset_right = 1064.0
+offset_bottom = 76.0
+icon = ExtResource("1_vobs2")
+flat = true
+script = ExtResource("3_wvkf4")
+
+[node name="Button2" type="Button" parent="UI"]
+offset_left = 1068.0
+offset_top = 6.0
+offset_right = 1138.0
+offset_bottom = 76.0
+icon = ExtResource("9_v6j75")
+flat = true
+script = ExtResource("4_v0jy1")
+
+[node name="Towers" type="Node2D" parent="."]
+
+[node name="ShootTower" parent="Towers" instance=ExtResource("1_dkemv")]
+position = Vector2(551, 145.31)
+metadata/Range = 250
+
+[node name="Path" type="Node2D" parent="."]
+
+[node name="PathPoint1" type="Node2D" parent="Path"]
+position = Vector2(1152, 87)
+
+[node name="PathArea2D" type="Area2D" parent="Path/PathPoint1"]
+metadata/AreaType = "Path"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path/PathPoint1/PathArea2D"]
+scale = Vector2(0.0702742, 0.0693884)
+shape = SubResource("CircleShape2D_kvynq")
+
+[node name="PathPoint2" type="Node2D" parent="Path"]
+position = Vector2(900, 87)
+
+[node name="PathArea2D" type="Area2D" parent="Path/PathPoint2"]
+metadata/AreaType = "Path"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path/PathPoint2/PathArea2D"]
+scale = Vector2(0.0702742, 0.0693884)
+shape = SubResource("CircleShape2D_kvynq")
+
+[node name="PathPoint3" type="Node2D" parent="Path"]
+position = Vector2(900, 272)
+
+[node name="PathArea2D" type="Area2D" parent="Path/PathPoint3"]
+metadata/AreaType = "Path"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path/PathPoint3/PathArea2D"]
+scale = Vector2(0.0702742, 0.0693884)
+shape = SubResource("CircleShape2D_kvynq")
+
+[node name="PathPoint4" type="Node2D" parent="Path"]
+position = Vector2(315, 272)
+
+[node name="PathArea2D" type="Area2D" parent="Path/PathPoint4"]
+metadata/AreaType = "Path"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path/PathPoint4/PathArea2D"]
+scale = Vector2(0.0702742, 0.0693884)
+shape = SubResource("CircleShape2D_kvynq")
+
+[node name="PathPoint5" type="Node2D" parent="Path"]
+position = Vector2(315, 154)
+
+[node name="PathArea2D" type="Area2D" parent="Path/PathPoint5"]
+metadata/AreaType = "Path"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path/PathPoint5/PathArea2D"]
+scale = Vector2(0.0702742, 0.0693884)
+shape = SubResource("CircleShape2D_kvynq")
+
+[node name="PathPoint6" type="Node2D" parent="Path"]
+position = Vector2(184, 154)
+
+[node name="PathArea2D" type="Area2D" parent="Path/PathPoint6"]
+metadata/AreaType = "Path"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path/PathPoint6/PathArea2D"]
+scale = Vector2(0.0702742, 0.0693884)
+shape = SubResource("CircleShape2D_kvynq")
+
+[node name="PathPoint7" type="Node2D" parent="Path"]
+position = Vector2(184, 480)
+
+[node name="PathArea2D" type="Area2D" parent="Path/PathPoint7"]
+metadata/AreaType = "Path"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path/PathPoint7/PathArea2D"]
+scale = Vector2(0.0702742, 0.0693884)
+shape = SubResource("CircleShape2D_kvynq")
+
+[node name="PathPoint8" type="Node2D" parent="Path"]
+position = Vector2(-133, 480)
+
+[node name="PathArea2D" type="Area2D" parent="Path/PathPoint8"]
+metadata/AreaType = "Path"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path/PathPoint8/PathArea2D"]
+scale = Vector2(0.0702742, 0.0693884)
+shape = SubResource("CircleShape2D_kvynq")
+
+[node name="TowerLimitText" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 747.0
+offset_top = 35.0
+offset_right = 994.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3qub6")
+theme_override_font_sizes/normal_font_size = 24
+text = "Towers 1/1"
+fit_content = true
+tab_size = 7
+
+[node name="WaveText" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 502.0
+offset_top = 257.0
+offset_right = 839.0
+offset_bottom = 347.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3qub6")
+theme_override_font_sizes/normal_font_size = 40
+text = "Wave 1"
+fit_content = true
+tab_size = 7
+
+[node name="HealthText" type="RichTextLabel" parent="."]
+offset_left = 868.0
+offset_top = 576.0
+offset_right = 1166.0
+offset_bottom = 658.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3qub6")
+theme_override_font_sizes/normal_font_size = 40
+text = "Health 10/10"
+
+[node name="Death Text" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 0.895
+offset_top = 1118.0
+offset_right = 298.895
+offset_bottom = 1200.0
+theme_override_colors/default_color = Color(0, 0.878431, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "You Lose"
+
+[node name="PathEnd" parent="." instance=ExtResource("3_a0goq")]
+position = Vector2(-21, 481)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(1522, 83)
+script = ExtResource("4_4ko12")
+basic_enemy = ExtResource("2_u5gnk")
+small_enemy = ExtResource("5_fwa0v")
+
+[node name="TowerSpawner" type="Node2D" parent="."]
+script = ExtResource("5_nljlk")
+basic_tower = ExtResource("1_dkemv")
+red_tower = ExtResource("7_pgpl0")
+
+[node name="Trader" type="Node2D" parent="."]
+script = ExtResource("13_s5b52")
+
+[connection signal="pressed" from="UI/Button" to="UI/Button" method="_on_pressed"]
+[connection signal="button_down" from="UI/Button2" to="UI/Button2" method="_on_button_down"]
+[connection signal="pressed" from="UI/Button2" to="UI/Button" method="_on_button_2_pressed"]
+[connection signal="pressed" from="UI/Button2" to="UI/Button2" method="_on_pressed"]
