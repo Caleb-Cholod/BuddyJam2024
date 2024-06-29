@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5c6i6ptk717r"
-path="res://.godot/imported/trade_confirm_button_hover.png-527812190a22c4f015765ca4aa013e51.ctex"
+uid="uid://bhbivipv17fqj"
+path="res://.godot/imported/trade_confirm_button_hover.png-6c473935e7cfbdb4f2debeef99541334.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/trade/trade_confirm_button_hover.png"
-dest_files=["res://.godot/imported/trade_confirm_button_hover.png-527812190a22c4f015765ca4aa013e51.ctex"]
+source_file="res://Scenes/Main Scenes/ui/trade/trade_confirm_button_hover.png"
+dest_files=["res://.godot/imported/trade_confirm_button_hover.png-6c473935e7cfbdb4f2debeef99541334.ctex"]
 
 [params]
 
