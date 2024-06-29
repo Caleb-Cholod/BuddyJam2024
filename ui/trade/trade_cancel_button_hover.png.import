@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wtt2s0cmwqjy"
-path="res://.godot/imported/trade_cancel_button_hover.png-c826648c7a888b126ba0062cde89bd59.ctex"
+uid="uid://c8v2o8be0r35t"
+path="res://.godot/imported/trade_cancel_button_hover.png-c4833d1d2d97af74f1ec6a3b0a08b9ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/trade/trade_cancel_button_hover.png"
-dest_files=["res://.godot/imported/trade_cancel_button_hover.png-c826648c7a888b126ba0062cde89bd59.ctex"]
+source_file="res://Scenes/Main Scenes/ui/trade/trade_cancel_button_hover.png"
+dest_files=["res://.godot/imported/trade_cancel_button_hover.png-c4833d1d2d97af74f1ec6a3b0a08b9ac.ctex"]
 
 [params]
 
