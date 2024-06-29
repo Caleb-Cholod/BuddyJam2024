@@ -11,6 +11,7 @@ func _process(delta):
 	pass
 
 
-
 func _on_pressed():
-	GameState.currentWaveState = GameState.WaveState.IN_PROGRESS
+	#print("changing scene")
+	get_tree().change_scene_to_file("res://Scenes/Main Scenes/level.tscn")
+
