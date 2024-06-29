@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bpv7fdwg5dwpd"
+path="res://.godot/imported/fire hit2.wav-c0d834ce87baca6acce9ab63db2b3352.sample"
+
+[deps]
+
+source_file="res://Sounds/fire hit2.wav"
+dest_files=["res://.godot/imported/fire hit2.wav-c0d834ce87baca6acce9ab63db2b3352.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
