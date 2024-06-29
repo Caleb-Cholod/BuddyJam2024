@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkupl85847xae"
-path="res://.godot/imported/trade_confirm_button.png-09546f0b0406bb19bef11cd68b354783.ctex"
+uid="uid://pn6ss4lq5q6"
+path="res://.godot/imported/trade_confirm_button.png-5a990cb102a984b5263dc90ced9dd850.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Main Scenes/ui/trade/trade_confirm_button.png"
-dest_files=["res://.godot/imported/trade_confirm_button.png-09546f0b0406bb19bef11cd68b354783.ctex"]
+source_file="res://ui/trade/trade_confirm_button.png"
+dest_files=["res://.godot/imported/trade_confirm_button.png-5a990cb102a984b5263dc90ced9dd850.ctex"]
 
 [params]
 

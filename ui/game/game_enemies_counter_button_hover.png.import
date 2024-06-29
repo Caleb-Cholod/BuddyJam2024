@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://10am67yji1u6"
-path="res://.godot/imported/game_enemies_counter_button_hover.png-2d1ee8429da7a800d37c5897ed12d06c.ctex"
+uid="uid://bowd5x7m1g8xr"
+path="res://.godot/imported/game_enemies_counter_button_hover.png-80884a026a7f8ad90b7d10e3103750f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Main Scenes/ui/game/game_enemies_counter_button_hover.png"
-dest_files=["res://.godot/imported/game_enemies_counter_button_hover.png-2d1ee8429da7a800d37c5897ed12d06c.ctex"]
+source_file="res://ui/game/game_enemies_counter_button_hover.png"
+dest_files=["res://.godot/imported/game_enemies_counter_button_hover.png-80884a026a7f8ad90b7d10e3103750f7.ctex"]
 
 [params]
 

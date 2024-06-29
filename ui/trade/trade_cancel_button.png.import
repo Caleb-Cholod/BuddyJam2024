@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfib27mekb6su"
-path="res://.godot/imported/trade_cancel_button.png-60f327f5ef628e7bee4f2e1954108d30.ctex"
+uid="uid://d3rqu8xfyghsn"
+path="res://.godot/imported/trade_cancel_button.png-9501cbdbbcd44e89768a4b3d958df5bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Main Scenes/ui/trade/trade_cancel_button.png"
-dest_files=["res://.godot/imported/trade_cancel_button.png-60f327f5ef628e7bee4f2e1954108d30.ctex"]
+source_file="res://ui/trade/trade_cancel_button.png"
+dest_files=["res://.godot/imported/trade_cancel_button.png-9501cbdbbcd44e89768a4b3d958df5bc.ctex"]
 
 [params]
 

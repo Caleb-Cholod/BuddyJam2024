@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyu7hsekpjpci"
-path="res://.godot/imported/icon_tower_placeholder1.png-fc93476fa221d11c56cbc48a10a0acac.ctex"
+uid="uid://cli5o6nh3fxvp"
+path="res://.godot/imported/icon_tower_placeholder1.png-2eb43dc326a298f23c155dac73d99e0a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Main Scenes/ui/icons/icon_tower_placeholder1.png"
-dest_files=["res://.godot/imported/icon_tower_placeholder1.png-fc93476fa221d11c56cbc48a10a0acac.ctex"]
+source_file="res://ui/icons/icon_tower_placeholder1.png"
+dest_files=["res://.godot/imported/icon_tower_placeholder1.png-2eb43dc326a298f23c155dac73d99e0a.ctex"]
 
 [params]
 
