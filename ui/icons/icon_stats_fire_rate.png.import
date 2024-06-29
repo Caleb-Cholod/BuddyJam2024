@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdxliyu7vohes"
-path="res://.godot/imported/icon_stats_fire_rate.png-6cc5018ce895eff4a004f3563c0b0d92.ctex"
+uid="uid://tt0q1gdapjpp"
+path="res://.godot/imported/icon_stats_fire_rate.png-fe89c65e22eed1a9bf5e8d5dfb410046.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Main Scenes/ui/icons/icon_stats_fire_rate.png"
-dest_files=["res://.godot/imported/icon_stats_fire_rate.png-6cc5018ce895eff4a004f3563c0b0d92.ctex"]
+source_file="res://ui/icons/icon_stats_fire_rate.png"
+dest_files=["res://.godot/imported/icon_stats_fire_rate.png-fe89c65e22eed1a9bf5e8d5dfb410046.ctex"]
 
 [params]
 

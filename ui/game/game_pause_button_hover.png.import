@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drc7hb15le2gi"
-path="res://.godot/imported/game_pause_button_hover.png-60516f89d922c5ec5a594ce7278bb7de.ctex"
+uid="uid://c2pi7fa2uy8lc"
+path="res://.godot/imported/game_pause_button_hover.png-3e1f93d9827394915da2420cbf1a5aa4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Main Scenes/ui/game/game_pause_button_hover.png"
-dest_files=["res://.godot/imported/game_pause_button_hover.png-60516f89d922c5ec5a594ce7278bb7de.ctex"]
+source_file="res://ui/game/game_pause_button_hover.png"
+dest_files=["res://.godot/imported/game_pause_button_hover.png-3e1f93d9827394915da2420cbf1a5aa4.ctex"]
 
 [params]
 

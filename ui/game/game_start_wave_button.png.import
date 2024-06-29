@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcntv0hs7a8my"
-path="res://.godot/imported/game_start_wave_button.png-62bc8a3650efa031f44a8fe48467aaec.ctex"
+uid="uid://cxphwsxlwta1v"
+path="res://.godot/imported/game_start_wave_button.png-50c229b6bfccc82f3600aa1ac8b09ee7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Main Scenes/ui/game/game_start_wave_button.png"
-dest_files=["res://.godot/imported/game_start_wave_button.png-62bc8a3650efa031f44a8fe48467aaec.ctex"]
+source_file="res://ui/game/game_start_wave_button.png"
+dest_files=["res://.godot/imported/game_start_wave_button.png-50c229b6bfccc82f3600aa1ac8b09ee7.ctex"]
 
 [params]
 

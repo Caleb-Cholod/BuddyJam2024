@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcqfc4rjc4273"
-path="res://.godot/imported/trade_card_small.png-19c285b0f8b287d5ddf8310a6a774eb5.ctex"
+uid="uid://e5g0v2gq63nb"
+path="res://.godot/imported/trade_card_small.png-373f2a8eb6a86671d474efe2bce6830f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Main Scenes/ui/trade/trade_card_small.png"
-dest_files=["res://.godot/imported/trade_card_small.png-19c285b0f8b287d5ddf8310a6a774eb5.ctex"]
+source_file="res://ui/trade/trade_card_small.png"
+dest_files=["res://.godot/imported/trade_card_small.png-373f2a8eb6a86671d474efe2bce6830f.ctex"]
 
 [params]
 

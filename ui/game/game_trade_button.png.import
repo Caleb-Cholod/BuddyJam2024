@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w5dr7l26dtqk"
-path="res://.godot/imported/game_trade_button.png-c747f5161ce27b07f0bab0d9ebe12ae3.ctex"
+uid="uid://ck8bgxtpditqp"
+path="res://.godot/imported/game_trade_button.png-87f2dce8c1fdcef3215bfa6f88094a8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Main Scenes/ui/game/game_trade_button.png"
-dest_files=["res://.godot/imported/game_trade_button.png-c747f5161ce27b07f0bab0d9ebe12ae3.ctex"]
+source_file="res://ui/game/game_trade_button.png"
+dest_files=["res://.godot/imported/game_trade_button.png-87f2dce8c1fdcef3215bfa6f88094a8f.ctex"]
 
 [params]
 
