@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://i7g1xobv1oxw"]
 
 [ext_resource type="Script" path="res://Scripts/shoot_tower.gd" id="1_gh2u3"]
-[ext_resource type="Texture2D" uid="uid://22rd5xdih4f3" path="res://Sprites/Towers/Tree_Stump_Slime.png" id="2_a7ffx"]
+[ext_resource type="Texture2D" uid="uid://dgodwr00er4gj" path="res://Sprites/Towers/Tree_Stump_Slime.png" id="2_a7ffx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_houeq"]
 radius = 39.6343

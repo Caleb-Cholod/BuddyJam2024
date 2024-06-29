@@ -4,11 +4,12 @@ var basic_enemy :PackedScene = preload("res://Scenes/Objects/basic_enemy.tscn")
 var small_enemy :PackedScene = preload("res://Scenes/Objects/small_enemy.tscn")
 var tower: PackedScene = preload("res://Scenes/Objects/Tower.tscn")
 
-var mushroomTexture: Texture2D = preload("res://Sprites/Mushroom/Shroom.png")
-var slimeTexture: Texture2D = preload("res://Sprites/Slime/Slime.png")
-var bunnyTexture: Texture2D = preload("res://Sprites/Bunny/Bunny.png")
-var phoenixTexture: Texture2D = preload("res://Sprites/Phoenix/Phoenix.png")
-
+var mushroomTexture: Texture2D = preload("res://ui/icons/icon_tower_mushroom.png")
+var slimeTexture: Texture2D = preload("res://ui/icons/icon_tower_slime.png")
+var bunnyTexture: Texture2D = preload("res://ui/icons/icon_tower_bunny.png")
+var phoenixTexture: Texture2D = preload("res://ui/icons/icon_tower_phoenix.png")
+var addTexture: Texture2D = preload("res://ui/trade/trade_arrow3.png")
+var subTexture: Texture2D = preload("res://ui/trade/trade_arrow2.png")
 
 var Wavetxt: Node
 var limitTxt: Node
@@ -24,6 +25,8 @@ var wave2 = []
 var wave3 = []
 var wave4 = []
 var wave5 = []
+
+var tradeOptions = []
 
 func _ready():
 	var tower1 = tower.instantiate()
@@ -94,7 +97,12 @@ func _process(delta):
 
 				enemy.global_position = Spawner.global_position
 				Enemies.add_child(enemy)
+			#If Wave is finished
+			if(GameState.enemiesInWaveKilled >= GameState.enemiesInWave):
+				tradeOptions = []
+				GameState.currentWaveState = GameState.WaveState.TRADING
 		GameState.WaveState.GAME_START:
+			TradeContainer.visible = false
 			Wavetxt.visible = true
 			Wavetxt.text = "Wave " + str(GameState.waveNumber+1)
 			GameState.timer5 -= delta
@@ -126,7 +134,44 @@ func _process(delta):
 			InventoryContainer.visible = !GameState.isPlacingTower
 		GameState.WaveState.TRADING:
 			TradeContainer.visible = true
-			
-	#If Wave is finished
-	if(GameState.enemiesInWaveKilled >= GameState.enemiesInWave):
-		GameState.currentWaveState = GameState.WaveState.TRADING
+			if (tradeOptions.size() < 3):
+				tradeOptions = generateTrades()
+			for y in range(3):
+				var trade = TradeContainer.get_child(y+1)
+				match(tradeOptions[y].towerOption.type):
+					Enums.TowerType.BUNNY:
+						trade.get_child(0).get_child(0).texture = bunnyTexture
+					Enums.TowerType.MUSHROOM:
+						trade.get_child(0).get_child(0).texture = mushroomTexture
+					Enums.TowerType.SLIME:
+						trade.get_child(0).get_child(0).texture = slimeTexture
+					Enums.TowerType.PHOENIX:
+						trade.get_child(0).get_child(0).texture = phoenixTexture
+				
+				trade.tradeOption = tradeOptions[y]
+				for x in range(3):
+					if (tradeOptions[y].stats[x] >= 0):
+						trade.get_child(0).get_child(4 + x).texture = addTexture
+					else:
+						trade.get_child(0).get_child(4 + x).texture = subTexture
+					match (x):
+						0:
+							trade.get_child(0).get_node("Stat" + str(x+1) +"Text1").text = str(tradeOptions[y].towerOption.damage)
+							trade.get_child(0).get_node("Stat" + str(x+1) +"Text2").text = str(tradeOptions[y].stats[x] + tradeOptions[y].towerOption.damage)
+						1:
+							trade.get_child(0).get_node("Stat" + str(x+1) +"Text1").text = str(tradeOptions[y].towerOption.CDR)
+							trade.get_child(0).get_node("Stat" + str(x+1) +"Text2").text = str(tradeOptions[y].stats[x] + tradeOptions[y].towerOption.CDR)
+						2:
+							trade.get_child(0).get_node("Stat" + str(x+1) +"Text1").text = str(tradeOptions[y].towerOption.range)
+							trade.get_child(0).get_node("Stat" + str(x+1) +"Text2").text = str(tradeOptions[y].stats[x] + tradeOptions[y].towerOption.range)
+
+
+func generateTrades():
+	var towerOptions = []
+	for i in range(3):
+		var stats = [GameState.rng.randi() % 3 - GameState.rng.randi() % 3,  GameState.rng.randi() % 10 - GameState.rng.randi() % 10, GameState.rng.randi() % 20 - GameState.rng.randi() % 20]
+		var towerOption = GameState.towerInventory.pick_random()
+		
+		towerOptions.append({ stats = stats, towerOption = towerOption })
+		
+	return towerOptions
