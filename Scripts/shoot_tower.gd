@@ -17,7 +17,8 @@ var Tracking = false
 var EnemiesInRange = 0
 var lastDeletedEnemy
 #var OffCD = true
-var CD = 0.3
+var CDR = 0
+var CD = 0.7 - (CDR / 100)
 var timer = 0
 var damage = 2
 var range = 150

@@ -1,29 +1,31 @@
-[gd_scene load_steps=28 format=3 uid="uid://c2i747mpqlqvh"]
+[gd_scene load_steps=31 format=3 uid="uid://c2i747mpqlqvh"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_08nbr"]
 [ext_resource type="PackedScene" uid="uid://bwhjdq4gqd1ic" path="res://Scenes/Objects/shoot_tower.tscn" id="1_dkemv"]
-[ext_resource type="Texture2D" uid="uid://bdnqe33rrwp60" path="res://ui/game/game_pause_button.png" id="1_vobs2"]
+[ext_resource type="Texture2D" uid="uid://c5tjaddidl6gr" path="res://ui/game/game_pause_button.png" id="1_vobs2"]
 [ext_resource type="FontFile" uid="uid://2y0k2lv7ygk4" path="res://Fonts/PeaberryBase.ttf" id="3_3qub6"]
 [ext_resource type="PackedScene" uid="uid://4ehslf6in540" path="res://Scenes/Objects/path_end.tscn" id="3_a0goq"]
 [ext_resource type="Script" path="res://Scripts/Pause_Button.gd" id="3_wvkf4"]
 [ext_resource type="Script" path="res://Scripts/Play_Button.gd" id="4_v0jy1"]
 [ext_resource type="Script" path="res://Scenes/Main Scenes/TowerSpawner.gd" id="5_nljlk"]
 [ext_resource type="PackedScene" uid="uid://dmy44fo0ckx0f" path="res://Scenes/Objects/red_tower.tscn" id="7_pgpl0"]
-[ext_resource type="Texture2D" uid="uid://cxphwsxlwta1v" path="res://ui/game/game_start_wave_button.png" id="9_v6j75"]
+[ext_resource type="Texture2D" uid="uid://cqyb4kl3g6dcq" path="res://ui/game/game_start_wave_button.png" id="9_v6j75"]
 [ext_resource type="Script" path="res://Scripts/Trader.gd" id="13_s5b52"]
-[ext_resource type="Texture2D" uid="uid://bg14s41iiecgg" path="res://Sprites/Slime/Slime.png" id="15_281cn"]
 [ext_resource type="Texture2D" uid="uid://bfxuud0bm8wl" path="res://Sprites/Background.bmp" id="16_esrty"]
-[ext_resource type="Texture2D" uid="uid://sd06c1tlta00" path="res://ui/inventory/inventory.png" id="17_p1aj1"]
+[ext_resource type="Texture2D" uid="uid://bm1f61ib6fmc0" path="res://ui/icons/icon_tower_slime.png" id="17_fu8rt"]
+[ext_resource type="Texture2D" uid="uid://cd4l8tmd5nula" path="res://ui/inventory/inventory.png" id="17_p1aj1"]
 [ext_resource type="Script" path="res://Scripts/DraggableIcon.gd" id="17_pvcc6"]
 [ext_resource type="Texture2D" uid="uid://q2ldlj8m3ci5" path="res://Scenes/Main Scenes/ui/inventory/inventory_card.png" id="18_ugqa6"]
 [ext_resource type="Script" path="res://Scripts/DroppableZone.gd" id="18_w7d4m"]
 [ext_resource type="Texture2D" uid="uid://bja1b15hdhhi8" path="res://Scenes/Main Scenes/ui/trade/trade.png" id="19_0mvtq"]
 [ext_resource type="Texture2D" uid="uid://bw83247oei6qv" path="res://Scenes/Main Scenes/ui/inventory/inventory_slot.png" id="19_5okqw"]
+[ext_resource type="Script" path="res://Scripts/TradeOptionSelect.gd" id="20_0j5k8"]
 [ext_resource type="Texture2D" uid="uid://bcqfc4rjc4273" path="res://Scenes/Main Scenes/ui/trade/trade_card_small.png" id="20_mwoxy"]
-[ext_resource type="Texture2D" uid="uid://b2be2fup1vobq" path="res://Scenes/Main Scenes/ui/trade/trade_card_stats.png" id="21_31jxn"]
-[ext_resource type="Texture2D" uid="uid://dmu5tdj1g4bph" path="res://Scenes/Main Scenes/ui/icons/icon_stats_damage.png" id="21_g4sga"]
-[ext_resource type="Texture2D" uid="uid://bnuakq8w0d8rv" path="res://Scenes/Main Scenes/ui/trade/trade_arrow1.png" id="22_ca7fn"]
-[ext_resource type="Texture2D" uid="uid://bercv61x6b1yf" path="res://Scenes/Main Scenes/ui/trade/trade_slot.png" id="23_8tocr"]
+[ext_resource type="Texture2D" uid="uid://cegnv06ugca8m" path="res://ui/icons/icon_enemy_bunny.png" id="21_eeyv8"]
+[ext_resource type="Texture2D" uid="uid://b4kj7ngkeugxg" path="res://ui/icons/icon_stats_damage.png" id="22_kutyy"]
+[ext_resource type="Texture2D" uid="uid://c5aqhkr2ynkq1" path="res://ui/icons/icon_stats_fire_rate.png" id="23_s8shh"]
+[ext_resource type="Texture2D" uid="uid://0l05skedodih" path="res://ui/icons/icon_stats_health.png" id="24_gid1t"]
+[ext_resource type="Texture2D" uid="uid://bqg3863bu40k7" path="res://ui/trade/trade_arrow3.png" id="25_5a0jl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvynq"]
 
@@ -32,6 +34,9 @@ radius = 23.2594
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_exr10"]
 radius = 41.9738
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1mwab"]
+size = Vector2(289, 408)
 
 [node name="Level" type="Node2D"]
 
@@ -101,7 +106,7 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint5" type="Node2D" parent="Path"]
-position = Vector2(104, 479)
+position = Vector2(223, 580)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint5"]
 metadata/AreaType = "Path"
@@ -111,7 +116,7 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint6" type="Node2D" parent="Path"]
-position = Vector2(325, 312)
+position = Vector2(107, 472)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint6"]
 metadata/AreaType = "Path"
@@ -121,7 +126,7 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint7" type="Node2D" parent="Path"]
-position = Vector2(227, 579)
+position = Vector2(317, 316)
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint7"]
 metadata/AreaType = "Path"
@@ -296,9 +301,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("19_5okqw")
 
 [node name="TowerIcon" type="Sprite2D" parent="InventoryContainer/Container/Card/Slot1"]
-position = Vector2(-0.714279, -2.85715)
-scale = Vector2(0.018, 0.018)
-texture = ExtResource("15_281cn")
+position = Vector2(1.42858, 2.85711)
+texture = ExtResource("17_fu8rt")
 
 [node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot1"]
 position = Vector2(133.929, 8.18454)
@@ -317,9 +321,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("19_5okqw")
 
 [node name="TowerIcon" type="Sprite2D" parent="InventoryContainer/Container/Card/Slot2"]
-position = Vector2(-0.714279, -2.85715)
-scale = Vector2(0.018, 0.018)
-texture = ExtResource("15_281cn")
+position = Vector2(6.67572e-06, 2.14283)
+texture = ExtResource("17_fu8rt")
 
 [node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot2"]
 position = Vector2(133.929, 8.18454)
@@ -338,9 +341,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("19_5okqw")
 
 [node name="TowerIcon" type="Sprite2D" parent="InventoryContainer/Container/Card/Slot3"]
-position = Vector2(-0.714279, -2.85715)
-scale = Vector2(0.018, 0.018)
-texture = ExtResource("15_281cn")
+position = Vector2(0.000137448, 3.57142)
+texture = ExtResource("17_fu8rt")
 
 [node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot3"]
 position = Vector2(0.556198, -0.198941)
@@ -359,9 +361,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("19_5okqw")
 
 [node name="TowerIcon" type="Sprite2D" parent="InventoryContainer/Container/Card/Slot4"]
-position = Vector2(-0.714279, -2.85715)
-scale = Vector2(0.018, 0.018)
-texture = ExtResource("15_281cn")
+position = Vector2(0.714074, 2.14281)
+texture = ExtResource("17_fu8rt")
 
 [node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot4"]
 position = Vector2(1.53764, 3.81451)
@@ -380,48 +381,235 @@ shape = SubResource("CircleShape2D_exr10")
 position = Vector2(580, 344)
 texture = ExtResource("19_0mvtq")
 
-[node name="TradeOption1" type="Node2D" parent="TradeContainer"]
+[node name="TradeOption1" type="Area2D" parent="TradeContainer"]
+script = ExtResource("20_0j5k8")
 
 [node name="TradeCard" type="Sprite2D" parent="TradeContainer/TradeOption1"]
 position = Vector2(284, 368)
 texture = ExtResource("20_mwoxy")
 
-[node name="IconStatsDamage" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
-position = Vector2(-90, -21)
-scale = Vector2(1.27551, 1.27551)
-texture = ExtResource("21_g4sga")
+[node name="IconEnemy" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(-1, -130)
+texture = ExtResource("21_eeyv8")
 
-[node name="TradeCardStats" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
-position = Vector2(38, -21)
-texture = ExtResource("21_31jxn")
+[node name="IconStat1" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(-83, -16)
+texture = ExtResource("22_kutyy")
+
+[node name="IconStat2" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(-83, 53)
+texture = ExtResource("23_s8shh")
+
+[node name="IconStat3" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(-82, 128)
+texture = ExtResource("24_gid1t")
 
 [node name="TradeArrow1" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
-position = Vector2(-2, -123)
-texture = ExtResource("22_ca7fn")
+position = Vector2(20, -14)
+texture = ExtResource("25_5a0jl")
+
+[node name="TradeArrow2" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(21, 50)
+texture = ExtResource("25_5a0jl")
+
+[node name="TradeArrow3" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
+position = Vector2(23, 126)
+texture = ExtResource("25_5a0jl")
 
 [node name="Sprite2D" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
 
-[node name="TradeSlot" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
-position = Vector2(-77, -125)
-texture = ExtResource("23_8tocr")
+[node name="Stat1Text1" type="RichTextLabel" parent="TradeContainer/TradeOption1/TradeCard"]
+offset_left = -43.0
+offset_top = -34.0
+offset_right = -3.0
+offset_bottom = 6.0
 
-[node name="TradeSlot2" type="Sprite2D" parent="TradeContainer/TradeOption1/TradeCard"]
-position = Vector2(69, -123)
-texture = ExtResource("23_8tocr")
+[node name="Stat1Text2" type="RichTextLabel" parent="TradeContainer/TradeOption1/TradeCard"]
+offset_left = 58.0
+offset_top = -32.0
+offset_right = 98.0
+offset_bottom = 8.0
 
-[node name="TradeOption2" type="Node2D" parent="TradeContainer"]
+[node name="Stat2Text1" type="RichTextLabel" parent="TradeContainer/TradeOption1/TradeCard"]
+offset_left = -46.0
+offset_top = 31.0
+offset_right = -6.0
+offset_bottom = 71.0
+
+[node name="Stat2Text2" type="RichTextLabel" parent="TradeContainer/TradeOption1/TradeCard"]
+offset_left = 58.0
+offset_top = 32.0
+offset_right = 98.0
+offset_bottom = 72.0
+
+[node name="Stat3Text1" type="RichTextLabel" parent="TradeContainer/TradeOption1/TradeCard"]
+offset_left = -40.0
+offset_top = 108.0
+offset_bottom = 148.0
+
+[node name="Stat3Text2" type="RichTextLabel" parent="TradeContainer/TradeOption1/TradeCard"]
+offset_left = 59.0
+offset_top = 107.0
+offset_right = 99.0
+offset_bottom = 147.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TradeContainer/TradeOption1"]
+position = Vector2(284.5, 369)
+shape = SubResource("RectangleShape2D_1mwab")
+
+[node name="TradeOption2" type="Area2D" parent="TradeContainer"]
 position = Vector2(594, 392)
+script = ExtResource("20_0j5k8")
 
 [node name="Sprite2D" type="Sprite2D" parent="TradeContainer/TradeOption2"]
 position = Vector2(0, -23)
 texture = ExtResource("20_mwoxy")
 
-[node name="TradeOption3" type="Node2D" parent="TradeContainer"]
+[node name="IconEnemy" type="Sprite2D" parent="TradeContainer/TradeOption2/Sprite2D"]
+position = Vector2(-1, -130)
+texture = ExtResource("21_eeyv8")
+
+[node name="IconStat1" type="Sprite2D" parent="TradeContainer/TradeOption2/Sprite2D"]
+position = Vector2(-83, -16)
+texture = ExtResource("22_kutyy")
+
+[node name="IconStat2" type="Sprite2D" parent="TradeContainer/TradeOption2/Sprite2D"]
+position = Vector2(-83, 53)
+texture = ExtResource("23_s8shh")
+
+[node name="IconStat3" type="Sprite2D" parent="TradeContainer/TradeOption2/Sprite2D"]
+position = Vector2(-82, 128)
+texture = ExtResource("24_gid1t")
+
+[node name="TradeArrow1" type="Sprite2D" parent="TradeContainer/TradeOption2/Sprite2D"]
+position = Vector2(20, -14)
+texture = ExtResource("25_5a0jl")
+
+[node name="TradeArrow2" type="Sprite2D" parent="TradeContainer/TradeOption2/Sprite2D"]
+position = Vector2(21, 50)
+texture = ExtResource("25_5a0jl")
+
+[node name="TradeArrow3" type="Sprite2D" parent="TradeContainer/TradeOption2/Sprite2D"]
+position = Vector2(23, 126)
+texture = ExtResource("25_5a0jl")
+
+[node name="Sprite2D" type="Sprite2D" parent="TradeContainer/TradeOption2/Sprite2D"]
+
+[node name="Stat1Text1" type="RichTextLabel" parent="TradeContainer/TradeOption2/Sprite2D"]
+offset_left = -43.0
+offset_top = -34.0
+offset_right = -3.0
+offset_bottom = 6.0
+
+[node name="Stat1Text2" type="RichTextLabel" parent="TradeContainer/TradeOption2/Sprite2D"]
+offset_left = 58.0
+offset_top = -32.0
+offset_right = 98.0
+offset_bottom = 8.0
+
+[node name="Stat2Text1" type="RichTextLabel" parent="TradeContainer/TradeOption2/Sprite2D"]
+offset_left = -46.0
+offset_top = 31.0
+offset_right = -6.0
+offset_bottom = 71.0
+
+[node name="Stat2Text2" type="RichTextLabel" parent="TradeContainer/TradeOption2/Sprite2D"]
+offset_left = 58.0
+offset_top = 32.0
+offset_right = 98.0
+offset_bottom = 72.0
+
+[node name="Stat3Text1" type="RichTextLabel" parent="TradeContainer/TradeOption2/Sprite2D"]
+offset_left = -40.0
+offset_top = 108.0
+offset_bottom = 148.0
+
+[node name="Stat3Text2" type="RichTextLabel" parent="TradeContainer/TradeOption2/Sprite2D"]
+offset_left = 59.0
+offset_top = 107.0
+offset_right = 99.0
+offset_bottom = 147.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TradeContainer/TradeOption2"]
+position = Vector2(1, -22)
+shape = SubResource("RectangleShape2D_1mwab")
+
+[node name="TradeOption3" type="Area2D" parent="TradeContainer"]
 position = Vector2(902, 392)
+script = ExtResource("20_0j5k8")
 
 [node name="Sprite2D" type="Sprite2D" parent="TradeContainer/TradeOption3"]
 position = Vector2(0, -23)
 texture = ExtResource("20_mwoxy")
+
+[node name="IconEnemy" type="Sprite2D" parent="TradeContainer/TradeOption3/Sprite2D"]
+position = Vector2(-1, -130)
+texture = ExtResource("21_eeyv8")
+
+[node name="IconStat1" type="Sprite2D" parent="TradeContainer/TradeOption3/Sprite2D"]
+position = Vector2(-83, -16)
+texture = ExtResource("22_kutyy")
+
+[node name="IconStat2" type="Sprite2D" parent="TradeContainer/TradeOption3/Sprite2D"]
+position = Vector2(-83, 53)
+texture = ExtResource("23_s8shh")
+
+[node name="IconStat3" type="Sprite2D" parent="TradeContainer/TradeOption3/Sprite2D"]
+position = Vector2(-82, 128)
+texture = ExtResource("24_gid1t")
+
+[node name="TradeArrow1" type="Sprite2D" parent="TradeContainer/TradeOption3/Sprite2D"]
+position = Vector2(20, -14)
+texture = ExtResource("25_5a0jl")
+
+[node name="TradeArrow2" type="Sprite2D" parent="TradeContainer/TradeOption3/Sprite2D"]
+position = Vector2(21, 50)
+texture = ExtResource("25_5a0jl")
+
+[node name="TradeArrow3" type="Sprite2D" parent="TradeContainer/TradeOption3/Sprite2D"]
+position = Vector2(23, 126)
+texture = ExtResource("25_5a0jl")
+
+[node name="Sprite2D" type="Sprite2D" parent="TradeContainer/TradeOption3/Sprite2D"]
+
+[node name="Stat1Text1" type="RichTextLabel" parent="TradeContainer/TradeOption3/Sprite2D"]
+offset_left = -43.0
+offset_top = -34.0
+offset_right = -3.0
+offset_bottom = 6.0
+
+[node name="Stat1Text2" type="RichTextLabel" parent="TradeContainer/TradeOption3/Sprite2D"]
+offset_left = 58.0
+offset_top = -32.0
+offset_right = 98.0
+offset_bottom = 8.0
+
+[node name="Stat2Text1" type="RichTextLabel" parent="TradeContainer/TradeOption3/Sprite2D"]
+offset_left = -46.0
+offset_top = 31.0
+offset_right = -6.0
+offset_bottom = 71.0
+
+[node name="Stat2Text2" type="RichTextLabel" parent="TradeContainer/TradeOption3/Sprite2D"]
+offset_left = 58.0
+offset_top = 32.0
+offset_right = 98.0
+offset_bottom = 72.0
+
+[node name="Stat3Text1" type="RichTextLabel" parent="TradeContainer/TradeOption3/Sprite2D"]
+offset_left = -40.0
+offset_top = 108.0
+offset_bottom = 148.0
+
+[node name="Stat3Text2" type="RichTextLabel" parent="TradeContainer/TradeOption3/Sprite2D"]
+offset_left = 59.0
+offset_top = 107.0
+offset_right = 99.0
+offset_bottom = 147.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TradeContainer/TradeOption3"]
+position = Vector2(1, -22)
+shape = SubResource("RectangleShape2D_1mwab")
 
 [connection signal="pressed" from="UI/Button" to="UI/Button" method="_on_pressed"]
 [connection signal="button_down" from="UI/Button2" to="UI/Button2" method="_on_button_down"]
