@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4f6hjo66whn1"
+path="res://.godot/imported/cloud shot.wav-1c198d0e7baba91a9012e0675b663ee0.sample"
+
+[deps]
+
+source_file="res://Sounds/cloud shot.wav"
+dest_files=["res://.godot/imported/cloud shot.wav-1c198d0e7baba91a9012e0675b663ee0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

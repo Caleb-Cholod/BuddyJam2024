@@ -7,6 +7,8 @@ var currentTime = 0
 var projDmg = 0
 var firedFromTowerNum = -1
 
+@onready var hit = self.get_parent().get_node("AudioSources/SlimeHit")
+
 func _ready():
 	pass
 
@@ -24,6 +26,7 @@ func _physics_process(delta):
 			if Target.is_in_group("enemies"):
 				Target.health -= projDmg
 				if(Target.health <= 0):
+					hit.play()
 					get_parent().get_node("Main").get_child(firedFromTowerNum).EnemyinRangeDied(Target)
 				queue_free()
 	#if target is null, just destroy bullet rather than leaving it

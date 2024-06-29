@@ -12,6 +12,12 @@ var phoenixTexture: Texture2D = preload("res://Sprites/Towers/Tree_Stump_Phoenix
 @onready var ShootPoint = Sprite.get_node("ShootPoint")
 @onready var projectile = load("res://Scenes/Objects/tower_projectile.tscn")
 
+
+@onready var SlSlime = self.get_parent().get_parent().get_node("AudioSources/SlimeShoot")
+@onready var PhSlime = self.get_parent().get_parent().get_node("AudioSources/PheonixShoot")
+@onready var MuSlime = self.get_parent().get_parent().get_node("AudioSources/MushroomShoot")
+@onready var BuSlime = self.get_parent().get_parent().get_node("AudioSources/BunnyShoot")
+
 var TrackedEnemy
 var Tracking = false
 var EnemiesInRange = 0
@@ -87,9 +93,10 @@ func _physics_process(delta):
 	if(enemiesInArea.size() > 0):
 		TrackedEnemy = enemiesInArea[0]
 	
-	if Tracking == true:
+	if Tracking == true && enemiesInArea.size() > 0:
 		TrackedEnemy = enemiesInArea[0]
-		self.get_child(0).set_flip_h(self.global_position.x < abs(TrackedEnemy.global_position.x))
+		if TrackedEnemy != null:	#sanity check for weird enemy existing error
+			self.get_child(0).set_flip_h(self.global_position.x < abs(TrackedEnemy.global_position.x))
 		
 		#shooting cooldown	
 		timer += delta
@@ -98,7 +105,18 @@ func _physics_process(delta):
 			Shoot()
 
 func Shoot():
-	
+	#Choose which sound to play
+	match type:
+		Enums.TowerType.BUNNY:
+			BuSlime.play()
+		Enums.TowerType.SLIME:
+			SlSlime.play()
+		Enums.TowerType.MUSHROOM:
+			MuSlime.play()
+		Enums.TowerType.PHOENIX:
+			PhSlime.play()
+			
+			
 	var instance = projectile.instantiate()
 	instance.position = position
 	instance.projDmg = damage
