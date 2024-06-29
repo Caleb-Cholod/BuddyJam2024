@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kq1chqocyb61"
-path="res://.godot/imported/trade_arrow3.png-984994da83edde2b334bd4892cdf3886.ctex"
+uid="uid://dndih7maklng1"
+path="res://.godot/imported/trade_arrow3.png-a9340e68efc73c12c62380584cfe3fc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/trade/trade_arrow3.png"
-dest_files=["res://.godot/imported/trade_arrow3.png-984994da83edde2b334bd4892cdf3886.ctex"]
+source_file="res://Scenes/Main Scenes/ui/trade/trade_arrow3.png"
+dest_files=["res://.godot/imported/trade_arrow3.png-a9340e68efc73c12c62380584cfe3fc8.ctex"]
 
 [params]
 
