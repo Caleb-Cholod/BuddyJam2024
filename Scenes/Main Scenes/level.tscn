@@ -1,19 +1,19 @@
-[gd_scene load_steps=31 format=3 uid="uid://c2i747mpqlqvh"]
+[gd_scene load_steps=40 format=3 uid="uid://c2i747mpqlqvh"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_08nbr"]
 [ext_resource type="PackedScene" uid="uid://bwhjdq4gqd1ic" path="res://Scenes/Objects/shoot_tower.tscn" id="1_dkemv"]
-[ext_resource type="Texture2D" uid="uid://c5tjaddidl6gr" path="res://ui/game/game_pause_button.png" id="1_vobs2"]
+[ext_resource type="Texture2D" uid="uid://bdnqe33rrwp60" path="res://ui/game/game_pause_button.png" id="1_vobs2"]
 [ext_resource type="FontFile" uid="uid://2y0k2lv7ygk4" path="res://Fonts/PeaberryBase.ttf" id="3_3qub6"]
 [ext_resource type="PackedScene" uid="uid://4ehslf6in540" path="res://Scenes/Objects/path_end.tscn" id="3_a0goq"]
 [ext_resource type="Script" path="res://Scripts/Pause_Button.gd" id="3_wvkf4"]
 [ext_resource type="Script" path="res://Scripts/Play_Button.gd" id="4_v0jy1"]
 [ext_resource type="Script" path="res://Scenes/Main Scenes/TowerSpawner.gd" id="5_nljlk"]
 [ext_resource type="PackedScene" uid="uid://dmy44fo0ckx0f" path="res://Scenes/Objects/red_tower.tscn" id="7_pgpl0"]
-[ext_resource type="Texture2D" uid="uid://cqyb4kl3g6dcq" path="res://ui/game/game_start_wave_button.png" id="9_v6j75"]
+[ext_resource type="Texture2D" uid="uid://cxphwsxlwta1v" path="res://ui/game/game_start_wave_button.png" id="9_v6j75"]
 [ext_resource type="Script" path="res://Scripts/Trader.gd" id="13_s5b52"]
 [ext_resource type="Texture2D" uid="uid://bfxuud0bm8wl" path="res://Sprites/Background.bmp" id="16_esrty"]
 [ext_resource type="Texture2D" uid="uid://bm1f61ib6fmc0" path="res://ui/icons/icon_tower_slime.png" id="17_fu8rt"]
-[ext_resource type="Texture2D" uid="uid://cd4l8tmd5nula" path="res://ui/inventory/inventory.png" id="17_p1aj1"]
+[ext_resource type="Texture2D" uid="uid://sd06c1tlta00" path="res://ui/inventory/inventory.png" id="17_p1aj1"]
 [ext_resource type="Script" path="res://Scripts/DraggableIcon.gd" id="17_pvcc6"]
 [ext_resource type="Texture2D" uid="uid://q2ldlj8m3ci5" path="res://Scenes/Main Scenes/ui/inventory/inventory_card.png" id="18_ugqa6"]
 [ext_resource type="Script" path="res://Scripts/DroppableZone.gd" id="18_w7d4m"]
@@ -21,11 +21,20 @@
 [ext_resource type="Texture2D" uid="uid://bw83247oei6qv" path="res://Scenes/Main Scenes/ui/inventory/inventory_slot.png" id="19_5okqw"]
 [ext_resource type="Script" path="res://Scripts/TradeOptionSelect.gd" id="20_0j5k8"]
 [ext_resource type="Texture2D" uid="uid://bcqfc4rjc4273" path="res://Scenes/Main Scenes/ui/trade/trade_card_small.png" id="20_mwoxy"]
-[ext_resource type="Texture2D" uid="uid://cegnv06ugca8m" path="res://ui/icons/icon_enemy_bunny.png" id="21_eeyv8"]
-[ext_resource type="Texture2D" uid="uid://b4kj7ngkeugxg" path="res://ui/icons/icon_stats_damage.png" id="22_kutyy"]
-[ext_resource type="Texture2D" uid="uid://c5aqhkr2ynkq1" path="res://ui/icons/icon_stats_fire_rate.png" id="23_s8shh"]
-[ext_resource type="Texture2D" uid="uid://0l05skedodih" path="res://ui/icons/icon_stats_health.png" id="24_gid1t"]
-[ext_resource type="Texture2D" uid="uid://bqg3863bu40k7" path="res://ui/trade/trade_arrow3.png" id="25_5a0jl"]
+[ext_resource type="Texture2D" uid="uid://cmw1wkccsm64w" path="res://ui/icons/icon_enemy_bunny.png" id="21_eeyv8"]
+[ext_resource type="Texture2D" uid="uid://clj310l6eig2u" path="res://ui/icons/icon_stats_damage.png" id="22_kutyy"]
+[ext_resource type="Texture2D" uid="uid://tt0q1gdapjpp" path="res://ui/icons/icon_stats_fire_rate.png" id="23_s8shh"]
+[ext_resource type="Texture2D" uid="uid://dmgtapjg0ctaq" path="res://ui/icons/icon_stats_health.png" id="24_gid1t"]
+[ext_resource type="Texture2D" uid="uid://kq1chqocyb61" path="res://ui/trade/trade_arrow3.png" id="25_5a0jl"]
+[ext_resource type="AudioStream" uid="uid://5mabx48fwemi" path="res://Sounds/tdf (1).wav" id="27_u7uhd"]
+[ext_resource type="AudioStream" uid="uid://bx7tinkcoa2ua" path="res://Sounds/place2.wav" id="28_0d8dw"]
+[ext_resource type="AudioStream" uid="uid://hkkrqc6u2evn" path="res://Sounds/select.wav" id="29_ob0sp"]
+[ext_resource type="AudioStream" uid="uid://b5b5bbd5o6nbj" path="res://Sounds/drag.wav" id="30_3r4wd"]
+[ext_resource type="AudioStream" uid="uid://bgb2bl1j8co2b" path="res://Sounds/slime hit.wav" id="31_kji6x"]
+[ext_resource type="AudioStream" uid="uid://caj0x7c7jn18h" path="res://Sounds/slimeshot.wav" id="31_sfhx0"]
+[ext_resource type="AudioStream" uid="uid://jvoj2qvt1urr" path="res://Sounds/fireshot2.wav" id="32_oyf5t"]
+[ext_resource type="AudioStream" uid="uid://3o4ow8ht0qc3" path="res://Sounds/cloud shot2.wav" id="33_l42dw"]
+[ext_resource type="AudioStream" uid="uid://cmo1x26cnj5fo" path="res://Sounds/slimeshot2.wav" id="34_deier"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kvynq"]
 
@@ -39,8 +48,62 @@ radius = 41.9738
 size = Vector2(289, 408)
 
 [node name="Level" type="Node2D"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="UI" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="Button" type="Button" parent="UI"]
 process_mode = 3
@@ -62,11 +125,91 @@ flat = true
 script = ExtResource("4_v0jy1")
 
 [node name="Towers" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="Path" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="PathPoint1" type="Node2D" parent="Path"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(1151, 335)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint1"]
 metadata/AreaType = "Path"
@@ -76,7 +219,33 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint2" type="Node2D" parent="Path"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(961, 359)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint2"]
 metadata/AreaType = "Path"
@@ -86,7 +255,33 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint3" type="Node2D" parent="Path"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(885, 558)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint3"]
 metadata/AreaType = "Path"
@@ -96,7 +291,33 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint4" type="Node2D" parent="Path"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(630, 478)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint4"]
 metadata/AreaType = "Path"
@@ -106,7 +327,33 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint5" type="Node2D" parent="Path"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(223, 580)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint5"]
 metadata/AreaType = "Path"
@@ -116,7 +363,33 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint6" type="Node2D" parent="Path"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(107, 472)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint6"]
 metadata/AreaType = "Path"
@@ -126,7 +399,33 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint7" type="Node2D" parent="Path"]
-position = Vector2(317, 316)
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(317, 277)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint7"]
 metadata/AreaType = "Path"
@@ -136,7 +435,33 @@ scale = Vector2(0.0702742, 0.0693884)
 shape = SubResource("CircleShape2D_kvynq")
 
 [node name="PathPoint8" type="Node2D" parent="Path"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(-109, 286)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="PathArea2D" type="Area2D" parent="Path/PathPoint8"]
 metadata/AreaType = "Path"
@@ -189,29 +514,160 @@ theme_override_fonts/normal_font = ExtResource("3_3qub6")
 theme_override_font_sizes/normal_font_size = 40
 text = "Health 10/10"
 
-[node name="Death Text" type="RichTextLabel" parent="."]
-offset_left = 0.895
-offset_top = 1118.0
-offset_right = 298.895
-offset_bottom = 1200.0
-theme_override_colors/default_color = Color(0, 0.878431, 0, 1)
+[node name="DeathText" type="RichTextLabel" parent="."]
+offset_left = 463.0
+offset_top = 306.0
+offset_right = 761.0
+offset_bottom = 388.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_3qub6")
 theme_override_font_sizes/normal_font_size = 40
 text = "You Lose"
 
 [node name="PathEnd" parent="." instance=ExtResource("3_a0goq")]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(3, 287)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
 
 [node name="Enemies" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="Spawner" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(1506, 331)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="TowerSpawner" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
 script = ExtResource("5_nljlk")
 basic_tower = ExtResource("1_dkemv")
 red_tower = ExtResource("7_pgpl0")
 
 [node name="Trader" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
 script = ExtResource("13_s5b52")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -224,9 +680,62 @@ scale = Vector2(0.599479, 0.599074)
 texture = ExtResource("16_esrty")
 
 [node name="Main" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
 script = ExtResource("1_08nbr")
 
 [node name="TowerSpots" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="TowerSpot1" type="Area2D" parent="TowerSpots"]
 position = Vector2(751, 444)
@@ -285,6 +794,33 @@ position = Vector2(-2.16022, 4.38193)
 shape = SubResource("CircleShape2D_0n6uu")
 
 [node name="InventoryContainer" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="Container" type="Sprite2D" parent="InventoryContainer"]
 position = Vector2(585, 355)
@@ -305,7 +841,33 @@ position = Vector2(1.42858, 2.85711)
 texture = ExtResource("17_fu8rt")
 
 [node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot1"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(133.929, 8.18454)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="HitArea" type="Area2D" parent="InventoryContainer/Container/Card/Slot1/TowerIconNode"]
 position = Vector2(-131.072, -6.04167)
@@ -325,7 +887,33 @@ position = Vector2(6.67572e-06, 2.14283)
 texture = ExtResource("17_fu8rt")
 
 [node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot2"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(133.929, 8.18454)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="HitArea" type="Area2D" parent="InventoryContainer/Container/Card/Slot2/TowerIconNode"]
 position = Vector2(-131.072, -8.18453)
@@ -345,7 +933,33 @@ position = Vector2(0.000137448, 3.57142)
 texture = ExtResource("17_fu8rt")
 
 [node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot3"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(0.556198, -0.198941)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="HitArea" type="Area2D" parent="InventoryContainer/Container/Card/Slot3/TowerIconNode"]
 position = Vector2(2.14281, 5.71426)
@@ -365,7 +979,33 @@ position = Vector2(0.714074, 2.14281)
 texture = ExtResource("17_fu8rt")
 
 [node name="TowerIconNode" type="Node2D" parent="InventoryContainer/Container/Card/Slot4"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
 position = Vector2(1.53764, 3.81451)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="HitArea" type="Area2D" parent="InventoryContainer/Container/Card/Slot4/TowerIconNode"]
 position = Vector2(2.14285, 2.85712)
@@ -376,6 +1016,33 @@ position = Vector2(-4.28572, -6.42853)
 shape = SubResource("CircleShape2D_exr10")
 
 [node name="TradeContainer" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
 
 [node name="Container" type="Sprite2D" parent="TradeContainer"]
 position = Vector2(580, 344)
@@ -610,6 +1277,72 @@ offset_bottom = 147.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TradeContainer/TradeOption3"]
 position = Vector2(1, -22)
 shape = SubResource("RectangleShape2D_1mwab")
+
+[node name="AudioSources" type="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+position = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+skew = 0.0
+script = null
+
+[node name="Main Theme" type="AudioStreamPlayer2D" parent="AudioSources"]
+stream = ExtResource("27_u7uhd")
+volume_db = -10.559
+autoplay = true
+
+[node name="Place" type="AudioStreamPlayer2D" parent="AudioSources"]
+stream = ExtResource("28_0d8dw")
+volume_db = -6.559
+
+[node name="Pick" type="AudioStreamPlayer2D" parent="AudioSources"]
+stream = ExtResource("29_ob0sp")
+volume_db = -6.559
+
+[node name="Popup" type="AudioStreamPlayer2D" parent="AudioSources"]
+stream = ExtResource("30_3r4wd")
+volume_db = -2.589
+
+[node name="SlimeHit" type="AudioStreamPlayer2D" parent="AudioSources"]
+stream = ExtResource("31_kji6x")
+volume_db = -1.644
+
+[node name="SlimeShoot" type="AudioStreamPlayer2D" parent="AudioSources"]
+stream = ExtResource("31_sfhx0")
+volume_db = -2.589
+
+[node name="PheonixShoot" type="AudioStreamPlayer2D" parent="AudioSources"]
+stream = ExtResource("32_oyf5t")
+volume_db = -13.589
+
+[node name="BunnyShoot" type="AudioStreamPlayer2D" parent="AudioSources"]
+stream = ExtResource("33_l42dw")
+volume_db = -9.834
+
+[node name="MushroomShoot" type="AudioStreamPlayer2D" parent="AudioSources"]
+stream = ExtResource("34_deier")
+volume_db = -2.589
 
 [connection signal="pressed" from="UI/Button" to="UI/Button" method="_on_pressed"]
 [connection signal="button_down" from="UI/Button2" to="UI/Button2" method="_on_button_down"]
