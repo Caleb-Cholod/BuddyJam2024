@@ -13,12 +13,16 @@ var subTexture: Texture2D = preload("res://ui/trade/trade_arrow2.png")
 
 var Wavetxt: Node
 var limitTxt: Node
+var deathTxt: Node
 var TSpawner: Node
 var Trader: Node
 var Spawner: Node
 var Enemies: Node
 var InventoryContainer: Node
 var TradeContainer: Node
+
+#Audio====
+@onready var popup = self.get_parent().get_node("AudioSources/Popup")
 
 var wave1 = []
 var wave2 = []
@@ -27,6 +31,8 @@ var wave4 = []
 var wave5 = []
 
 var tradeOptions = []
+
+var hasOpenedInv = false
 
 func _ready():
 	var tower1 = tower.instantiate()
@@ -67,6 +73,7 @@ func _ready():
 	GameState.currentWaveState = GameState.WaveState.GAME_START
 	Wavetxt = get_parent().get_node("WaveText")
 	limitTxt = get_parent().get_node("TowerLimitText")
+	deathTxt = get_parent().get_node("DeathText")
 	TSpawner = get_parent().get_node("TowerSpawner")
 	Trader = get_parent().get_node("Trader")
 	Spawner = get_parent().get_node("Spawner")
@@ -75,6 +82,7 @@ func _ready():
 	InventoryContainer.visible = false
 	TradeContainer = get_parent().get_node("TradeContainer")
 	TradeContainer.visible = false
+	deathTxt.visible = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	GameState.timer += delta
@@ -116,6 +124,9 @@ func _process(delta):
 				Wavetxt.visible = false
 				GameState.currentWaveState = GameState.WaveState.PLANNING
 		GameState.WaveState.PLANNING:
+			if(!hasOpenedInv):	
+				popup.play()
+				hasOpenedInv = true
 			for i in range(4):
 				if (GameState.towerInventory[i] != null):
 					match GameState.towerInventory[i].type:
@@ -133,6 +144,7 @@ func _process(delta):
 					InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(0).visible = false
 			InventoryContainer.visible = !GameState.isPlacingTower
 		GameState.WaveState.TRADING:
+			hasOpenedInv = false
 			TradeContainer.visible = true
 			if (tradeOptions.size() < 3):
 				tradeOptions = generateTrades()
