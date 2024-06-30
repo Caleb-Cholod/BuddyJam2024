@@ -7,6 +7,8 @@ var speed = 200  # speed in pixels/sec
 var health = 10
 var damage = 1
 
+#keep track of what enemy i am, for now this just does sfx
+var enemyindex = -1
 
 var currentPointNum = 0
 var currentPoint

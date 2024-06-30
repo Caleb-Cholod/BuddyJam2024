@@ -102,12 +102,16 @@ func _process(delta):
 				var enemy
 				if(GameState.random1 < 25):#GameState.spawns[GameState.waveNumber][0]):
 					enemy = basic_enemy.instantiate()
+					enemy.enemyindex = 0
 				elif(GameState.random1 >= 25 && GameState.random1 < 50):
 					enemy = small_enemy.instantiate()
+					enemy.enemyindex = 1
 				elif(GameState.random1 >= 50 && GameState.random1 < 75):
 					enemy = mushroomEnemy.instantiate()
+					enemy.enemyindex = 2
 				else:
 					enemy = pheonixEnemy.instantiate()
+					enemy.enemyindex = 3
 
 				enemy.global_position = Spawner.global_position
 				Enemies.add_child(enemy)
@@ -187,8 +191,29 @@ func _process(delta):
 func generateTrades():
 	var towerOptions = []
 	for i in range(3):
-		
-		var stats = [GameState.rng.randi() % 3 - GameState.rng.randi() % 3,  GameState.rng.randi() % 10 - GameState.rng.randi() % 10, GameState.rng.randi() % 20 - GameState.rng.randi() % 20]
+		var dmg = GameState.rng.randi() % 4 - GameState.rng.randi() % 4
+		var rate = GameState.rng.randi() % 12 - GameState.rng.randi() % 12
+		var range = GameState.rng.randi() % 25 - GameState.rng.randi() % 25
+		var randstat = GameState.rng.randi() % 3
+		#if stats are all pos or negative, flip a random one (this could be better haha)
+		if(dmg >= 0 && rate >= 0 && range >= 0):
+			if(randstat == 0):
+				dmg = 0 - dmg
+			elif(randstat == 1):
+				rate = 0 - rate
+			else:
+				range = 0 - range
+				
+		elif(dmg <= 0 && rate <= 0 && range <= 0):
+			if(randstat == 0):
+				dmg = 0 - dmg
+			elif(randstat == 1):
+				rate = 0 - rate
+			else:
+				range = 0 - range
+				
+		#apply stats		
+		var stats = [dmg, rate, range]
 		var towerOption = GameState.towerInventory.pick_random()
 		
 		towerOptions.append({ stats = stats, towerOption = towerOption })
