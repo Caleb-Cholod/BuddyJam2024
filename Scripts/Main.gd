@@ -2,6 +2,8 @@ extends Node2D
 
 var basic_enemy :PackedScene = preload("res://Scenes/Objects/basic_enemy.tscn")
 var small_enemy :PackedScene = preload("res://Scenes/Objects/small_enemy.tscn")
+var mushroomEnemy :PackedScene = preload("res://Scenes/Objects/mushroom.tscn")
+var pheonixEnemy :PackedScene = preload("res://Scenes/Objects/Pheonix.tscn")
 var tower: PackedScene = preload("res://Scenes/Objects/Tower.tscn")
 
 var mushroomTexture: Texture2D = preload("res://ui/icons/icon_tower_mushroom.png")
@@ -98,10 +100,14 @@ func _process(delta):
 				
 				GameState.random1 = GameState.rng.randi() % 100
 				var enemy
-				if(GameState.random1 < GameState.spawns[GameState.waveNumber][0]):
+				if(GameState.random1 < 25):#GameState.spawns[GameState.waveNumber][0]):
 					enemy = basic_enemy.instantiate()
-				else:
+				elif(GameState.random1 >= 25 && GameState.random1 < 50):
 					enemy = small_enemy.instantiate()
+				elif(GameState.random1 >= 50 && GameState.random1 < 75):
+					enemy = mushroomEnemy.instantiate()
+				else:
+					enemy = pheonixEnemy.instantiate()
 
 				enemy.global_position = Spawner.global_position
 				Enemies.add_child(enemy)
@@ -181,6 +187,7 @@ func _process(delta):
 func generateTrades():
 	var towerOptions = []
 	for i in range(3):
+		
 		var stats = [GameState.rng.randi() % 3 - GameState.rng.randi() % 3,  GameState.rng.randi() % 10 - GameState.rng.randi() % 10, GameState.rng.randi() % 20 - GameState.rng.randi() % 20]
 		var towerOption = GameState.towerInventory.pick_random()
 		
