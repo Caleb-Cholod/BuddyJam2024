@@ -7,7 +7,10 @@ var currentTime = 0
 var projDmg = 0
 var firedFromTowerNum = -1
 
-@onready var hit = self.get_parent().get_node("AudioSources/SlimeHit")
+@onready var hit1 = self.get_parent().get_node("AudioSources/SlimeHit")
+@onready var hit2 = self.get_parent().get_node("AudioSources/CloudHit")
+@onready var hit3 = self.get_parent().get_node("AudioSources/ExplHit")
+@onready var hit4 = self.get_parent().get_node("AudioSources/FireHit")
 
 func _ready():
 	pass
@@ -25,7 +28,17 @@ func _physics_process(delta):
 		if(distVect.x < 50 && distVect.y < 50):
 			if Target.is_in_group("enemies"):
 				Target.health -= projDmg
-				hit.play()
+				#play corresponding hit sound
+				match Target.enemyindex:
+					0:
+						hit1.play()
+					1:
+						hit2.play()
+					2:
+						hit3.play()
+					3:
+						hit4.play()
+						
 				if(Target.health <= 0):
 					
 					get_parent().get_node("Main").get_child(firedFromTowerNum).EnemyinRangeDied(Target)
