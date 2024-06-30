@@ -25,8 +25,9 @@ func _physics_process(delta):
 		if(distVect.x < 50 && distVect.y < 50):
 			if Target.is_in_group("enemies"):
 				Target.health -= projDmg
+				hit.play()
 				if(Target.health <= 0):
-					hit.play()
+					
 					get_parent().get_node("Main").get_child(firedFromTowerNum).EnemyinRangeDied(Target)
 				queue_free()
 	#if target is null, just destroy bullet rather than leaving it
