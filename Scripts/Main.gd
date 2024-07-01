@@ -141,13 +141,13 @@ func _process(delta):
 				if (GameState.towerInventory[i] != null):
 					match GameState.towerInventory[i].type:
 						Enums.TowerType.MUSHROOM:
-							InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(0).texture = mushroomTexture
+							pass#InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(0).texture = mushroomTexture
 						Enums.TowerType.SLIME:
-							InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(0).texture = slimeTexture
+							pass#InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(0).texture = slimeTexture
 						Enums.TowerType.BUNNY:
-							InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(0).texture = bunnyTexture
+							pass#InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(0).texture = bunnyTexture
 						Enums.TowerType.PHOENIX:
-							InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(0).texture = phoenixTexture
+							pass#InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(0).texture = phoenixTexture
 					InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(1).get_child(0).tower = i
 					InventoryContainer.get_child(0).get_child(0).get_child(i).get_child(0).visible = true
 				else:

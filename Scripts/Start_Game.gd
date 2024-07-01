@@ -1,7 +1,7 @@
 extends Button
 
 var normTexture: Texture2D = preload("res://ui/title screen/title_screen_play_button.png")
-var hoverTexture: Texture2D = preload("res://ui/title screen/title_screen_play_button.png")
+var hoverTexture: Texture2D = preload("res://ui/title screen/title_screen_play_button_hover.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
